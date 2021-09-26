@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/w10"
+    tools:context=".MyReviews">
+
+    <include
+        android:id="@+id/mytoolbar"
+        layout="@layout/toolbar_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_mybooks"
+        android:layout_width="190dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="135dp"
+        android:onClick="openBooks"
+        android:text="@string/btn_Books"
+        android:textSize="20sp"
+        app:backgroundTint="#540022"
+        app:layout_constraintBottom_toTopOf="@+id/btn_mymovies"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mytoolbar" />
+
+    <Button
+        android:id="@+id/btn_mymovies"
+        android:layout_width="190dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginBottom="55dp"
+        android:onClick="openMovies"
+        android:text="@string/btn_Movies"
+        android:textSize="20sp"
+        app:backgroundTint="#540022"
+        app:layout_constraintBottom_toTopOf="@+id/btn_mytvshows"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_mybooks" />
+
+    <Button
+        android:id="@+id/btn_mytvshows"
+        android:layout_width="190dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="200dp"
+        android:onClick="openTvshows"
+        android:text="@string/btn_Tvshows"
+        android:textSize="20sp"
+        app:backgroundTint="#540022"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_mymovies" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

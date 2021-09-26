@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Project</string>
+    <string name="tv_App">Review For You</string>
+    <string name="et_Username">Username</string>
+    <string name="et_Password">Password</string>
+    <string name="btn_Signin">Sign in</string>
+    <string name="tv_Register">Don\'t have an account?</string>
+    <string name="btn_Register">Register here</string>
+    <string name="btn_Books">BOOKS</string>
+    <string name="btn_Movies">MOVIES</string>
+    <string name="btn_Tvshows">TV SHOWS</string>
+    <string name="DummyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Nulla quam velit, vulputate eu pharetra nec, mattis</string>
+    <string name="btn_vote">VOTE NOW FOR NEXT MONTH\'S BEST!</string>
+    <string name="tv_bk">Book Name</string>
+    <string name="tv_mv">Movie Name</string>
+    <string name="tv_tv">TV Show Name</string>
+    <string name="tv_bkTitle">Title</string>
+    <string name="tv_bkAuthor">Author</string>
+    <string name="tv_bkISBN">ISBN</string>
+    <string name="tv_bkDescription">Description</string>
+    <string name="btn_AddPhoto">Add Photo</string>
+    <string name="btn_TakePhoto">Take Photo</string>
+    <string name="btn_Save">Save</string>
+    <string name="btn_Cancel">Cancel</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="search_menu">Search</string>
+    <string name="tv_mvTitle">Title</string>
+    <string name="tv_mvGenre">Genre</string>
+    <string name="tv_mvDirector">Director</string>
+    <string name="tv_tvSeasons">Number of Seasons</string>
+    <string name="tv_tvgenre">Genre</string>
+    <string name="btn_delete">Delete Review</string>
+</resources>

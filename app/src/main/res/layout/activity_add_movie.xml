@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/w10"
+    tools:context=".AddMovie">
+
+    <include
+        android:id="@+id/addmvtoolbar"
+        layout="@layout/toolbar_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_mvphoto"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/maroon"
+        android:text="@string/btn_AddPhoto"
+        app:layout_constraintBottom_toTopOf="@+id/btn_mvcamera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addmvtoolbar"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btn_mvcamera"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/maroon"
+        android:text="@string/btn_TakePhoto"
+        app:layout_constraintEnd_toEndOf="@+id/btn_mvphoto"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_mvphoto"
+        app:layout_constraintTop_toBottomOf="@+id/btn_mvphoto" />
+
+    <ImageView
+        android:id="@+id/iv_mv"
+        android:layout_width="120dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_mvphoto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addmvtoolbar"
+        app:srcCompat="@drawable/mv1" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/tv_mvTitle"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/et_mvtitle"
+        app:layout_constraintTop_toBottomOf="@+id/iv_mv" />
+
+    <EditText
+        android:id="@+id/et_mvtitle"
+        android:layout_width="360dp"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded_corner"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textCursorDrawable="@color/teal_200"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/tv_mvGenre"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_mvgenre"
+        app:layout_constraintStart_toStartOf="@+id/et_mvgenre"
+        app:layout_constraintTop_toBottomOf="@+id/et_mvtitle" />
+
+    <EditText
+        android:id="@+id/et_mvgenre"
+        android:layout_width="360dp"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded_corner"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/tv_tvSeasons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tv_tvSeasons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/tv_mvDirector"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_mvdirector"
+        app:layout_constraintStart_toStartOf="@+id/et_mvdirector"
+        app:layout_constraintTop_toBottomOf="@+id/et_mvgenre" />
+
+    <EditText
+        android:id="@+id/et_mvdirector"
+        android:layout_width="360dp"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded_corner"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tvSeasons"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/tv_bkDescription"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_mvdescription"
+        app:layout_constraintStart_toStartOf="@+id/et_mvdescription"
+        app:layout_constraintTop_toBottomOf="@+id/et_mvdirector" />
+
+    <EditText
+        android:id="@+id/et_mvdescription"
+        android:layout_width="360dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded_corner"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/btn_mvcancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/btn_mvcancel"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:backgroundTint="@color/maroon"
+        android:text="@string/btn_Cancel"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_mvsave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_mvsave"
+        app:layout_constraintTop_toTopOf="@+id/btn_mvsave"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btn_mvsave"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:backgroundTint="@color/maroon"
+        android:text="@string/btn_Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_mvcancel"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
