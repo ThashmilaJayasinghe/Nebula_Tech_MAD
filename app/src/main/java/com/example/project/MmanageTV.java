@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class MmanageTV extends AppCompatActivity {
 
-    Button updateTV;
+    Button updateTV, addTV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +21,7 @@ public class MmanageTV extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         updateTV = (Button)findViewById(R.id.btn_UpdateTV);
+        addTV = (Button)findViewById(R.id.btn_AddTV);
 
         updateTV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,10 +31,24 @@ public class MmanageTV extends AppCompatActivity {
 
             }
         });
+
+        addTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                openeaddTV();
+
+            }
+        });
     }
 
     private void openeupdateTV() {
         Intent intent = new Intent(this,viewtv.class);
+        startActivity(intent);
+    }
+
+    private void openeaddTV() {
+        Intent intent = new Intent(this,AddTVShow.class);
         startActivity(intent);
     }
 }

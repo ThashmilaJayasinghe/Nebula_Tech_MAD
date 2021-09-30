@@ -20,7 +20,7 @@
         app:titleTextColor="@color/white" />
 
     <Button
-        android:id="@+id/btn_AddBook"
+        android:id="@+id/btn_AddMovie"
         android:layout_width="280dp"
         android:layout_height="85dp"
         android:layout_marginBottom="35dp"

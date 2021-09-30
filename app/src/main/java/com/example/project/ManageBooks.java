@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class ManageBooks extends AppCompatActivity {
 
-    Button updateBook;
+    Button updateBook, addbook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,6 @@ public class ManageBooks extends AppCompatActivity {
 
 
         updateBook = (Button)findViewById(R.id.btn_UpdateBook);
-
         updateBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,10 +31,25 @@ public class ManageBooks extends AppCompatActivity {
             }
         });
 
+        addbook = (Button)findViewById(R.id.btn_AddBook);
+        addbook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                openeaddbook();
+
+            }
+        });
+
     }
 
     private void openeupdateBook() {
         Intent intent = new Intent(this,ViewBooks.class);
+        startActivity(intent);
+    }
+
+    private void openeaddbook() {
+        Intent intent = new Intent(this,AddBook.class);
         startActivity(intent);
     }
 

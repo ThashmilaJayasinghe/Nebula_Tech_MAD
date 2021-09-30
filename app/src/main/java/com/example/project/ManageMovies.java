@@ -11,7 +11,7 @@ import android.widget.Button;
 
 public class ManageMovies extends AppCompatActivity {
 
-    Button updateMovie;
+    Button updateMovie, addMovie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +32,25 @@ public class ManageMovies extends AppCompatActivity {
 
             }
         });
+
+        addMovie = (Button)findViewById(R.id.btn_AddMovie);
+        addMovie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                openeaddMovie();
+
+            }
+        });
     }
 
     private void openeupdateMovie() {
         Intent intent = new Intent(this,ViewMovies.class);
+        startActivity(intent);
+    }
+
+    private void openeaddMovie() {
+        Intent intent = new Intent(this,AddMovie.class);
         startActivity(intent);
     }
 }
