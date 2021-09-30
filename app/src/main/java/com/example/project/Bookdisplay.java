@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,9 +30,11 @@ public class Bookdisplay extends AppCompatActivity {
     private EditText bookreview;
     private Button confirm;
     RecyclerView Rreview;
+    private EditText description;
+    private ImageView img;
 
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference,databaseReferenceR;
+    DatabaseReference databaseReference,databaseReferenceR,databaseReferenceD,databaseReferenceI;
     ArrayList<Bookreviews> list;
     Bookadapter bookadapter;
 
@@ -42,10 +45,17 @@ public class Bookdisplay extends AppCompatActivity {
         bookreview= findViewById(R.id.addreviewbook);
         confirm = findViewById(R.id.reviewconfirmbook);
         Rreview = findViewById(R.id.Rbook);
+        description= findViewById(R.id.bookdescription);
+        description.setEnabled(false);
+
 
         //database instance and reference
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReferenceR = firebaseDatabase.getReference("Book").child("-MkIhcvghnveftcABZMp");
+        //for description
+        databaseReferenceD= firebaseDatabase.getReference("Book").child("-MkIhcvghnveftcABZMp");
+        //for image
+        //databaseReferenceI= firebaseDatabase.getReference("Book").child("-MkIhcvghnveftcABZMp").child("url");
         //recyclerview
         Rreview.setHasFixedSize(true);
         Rreview.setLayoutManager(new LinearLayoutManager(this));
@@ -74,6 +84,20 @@ public class Bookdisplay extends AppCompatActivity {
             }
 
         });
+        //retrieve description
+        databaseReferenceD.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String Description = snapshot.child("description").getValue().toString();
+                description.setText(Description);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
 
         confirm.setOnClickListener(new View.OnClickListener() {

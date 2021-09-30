@@ -3,10 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_bookdisplay.xml" value="0.1585144927536232" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_bookdisplay.xml" value="0.25" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_moviedisplay.xml" value="0.1585144927536232" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_profileview.xml" value="0.33" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_tvshowdisplay.xml" value="0.33" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_profile.xml" value="0.1" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_profileview.xml" value="0.2345679012345679" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_tvshowdisplay.xml" value="0.2753623188405797" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_tvshowpoll.xml" value="0.25" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_updatenew.xml" value="0.1585144927536232" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/cardview.xml" value="0.5" />

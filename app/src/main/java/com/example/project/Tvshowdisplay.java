@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -19,6 +20,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,9 +30,10 @@ public class Tvshowdisplay extends AppCompatActivity {
     private  EditText tvshowreview;
     private Button confirm;
     RecyclerView Rreview;
+    private ImageView img;
 
     FirebaseDatabase firebaseDatabase,firebaseDatabase2;
-    DatabaseReference databaseReference, databaseReferenceR;
+    DatabaseReference databaseReference, databaseReferenceR,databaseReferenceI;
 
     ArrayList<Tvshowreviews> list;
     Tvshowadapter tvshowadapter;
@@ -48,10 +51,13 @@ public class Tvshowdisplay extends AppCompatActivity {
             tvshowreview = findViewById(R.id.addreviewtv);
             confirm = findViewById(R.id.reviewconfirmtv);
             Rreview = findViewById(R.id.tvshowR);
+            img= findViewById(R.id.imageView8);
 
             //database instance and reference
             firebaseDatabase = FirebaseDatabase.getInstance();
             databaseReferenceR = firebaseDatabase.getReference("TVShow").child("-MkMiBSz-svCP2tp2rx2");
+            //for image
+            databaseReferenceI= firebaseDatabase.getReference("TVShow").child("-MkMiBSz-svCP2tp2rx2");
             //recyclerview
             Rreview.setHasFixedSize(true);
             Rreview.setLayoutManager(new LinearLayoutManager(this));
@@ -80,6 +86,21 @@ public class Tvshowdisplay extends AppCompatActivity {
                 }
 
             });
+
+
+                databaseReferenceI.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String url = snapshot.child("imageUrl").getValue().toString();
+                        Picasso.get().load(url).into(img);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
 
 
             confirm.setOnClickListener(new View.OnClickListener() {

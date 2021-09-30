@@ -40,7 +40,7 @@
 
 
         <EditText
-            android:id="@+id/editTextTextMultiLine2"
+            android:id="@+id/bookdescription"
             android:layout_width="match_parent"
             android:layout_height="76dp"
             android:layout_marginTop="100dp"

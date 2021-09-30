@@ -54,13 +54,14 @@
         />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine2"
+        android:id="@+id/bookdescription"
         android:layout_width="403dp"
         android:layout_height="80dp"
         android:layout_marginTop="100dp"
         android:ems="10"
-        android:gravity="start|top"
+
         android:hint="A lavishly illustrated guide to the history of design, this book showcases more than 100 of the most groundbreaking and important design classics ever created - from the 1860s to the present"
+        android:gravity="center_horizontal"
         android:inputType="textMultiLine"
         android:textColorHint="#433C3C"
         android:textSize="12sp"

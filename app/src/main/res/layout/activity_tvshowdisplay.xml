@@ -54,7 +54,7 @@
         />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine2"
+        android:id="@+id/bookdescription"
         android:layout_width="403dp"
         android:layout_height="80dp"
         android:layout_marginTop="100dp"
