@@ -12,6 +12,41 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project">
         <activity
+            android:name=".AdminPage"
+            android:exported="true"
+            android:label="Admin Panel" />
+
+        <activity
+            android:name=".viewtv"
+            android:exported="true"
+            android:label="Update/ Delete TV Show"/>
+        <activity
+            android:name=".Registration_form"
+            android:exported="true" />
+        <activity
+            android:name=".MmanageTV"
+            android:exported="true"
+            android:label="Manage TV Shows" />
+        <activity
+            android:name=".ManageMovies"
+            android:exported="true"
+            android:label="Manage Movies" />
+        <activity
+            android:name=".ViewMovies"
+            android:exported="true"
+            android:label="Update/ Delete Movie" />
+        <activity
+            android:name=".ViewBooks"
+            android:exported="true"
+            android:label="Update/ Delete Book" />
+        <activity
+            android:name=".ManageBooks"
+            android:exported="true"
+            android:label="Manage Books" />
+
+
+
+        <activity
             android:name=".Profile"
             android:exported="true" />
         <activity
