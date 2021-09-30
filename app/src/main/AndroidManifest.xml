@@ -12,6 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project">
         <activity
+            android:name=".Tvshowpoll"
+            android:exported="true" />
+        <activity
+            android:name=".Updateprofile"
+            android:exported="true" />
+        <activity
+            android:name=".profileview"
+            android:exported="true" />
+        <activity
+            android:name=".Moviedisplay"
+            android:exported="true" />
+        <activity
+            android:name=".Bookdisplay"
+            android:exported="true" />
+        <activity
+            android:name=".Tvshowdisplay"
+            android:exported="true" />
+        <activity
             android:name=".ViewBooks"
             android:exported="true" />
         <activity

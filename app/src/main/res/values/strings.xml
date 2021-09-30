@@ -35,4 +35,10 @@
     <string name="tv_tvSeasons">Number of Seasons</string>
     <string name="tv_tvgenre">Genre</string>
     <string name="btn_delete">Delete Review</string>
+    <string name="addreviews">Add your review</string>
+    <string name="cardviewr">review</string>
+    <string name="reviewconfirm">confirm</string>
+    <string name="btn_updateprofile">UPDATE</string>
+    <string name="btn_deleteprofile">DELETE</string>
+    <string name="radio_select">select</string>
 </resources>
