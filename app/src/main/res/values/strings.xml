@@ -35,4 +35,7 @@
     <string name="tv_tvSeasons">Number of Seasons</string>
     <string name="tv_tvgenre">Genre</string>
     <string name="btn_delete">Delete Review</string>
+    <string name="nav_open">Open navigation Drawer</string>
+    <string name="nav_close">close navigation Drawer</string>
+    <string name="todo" />
 </resources>
