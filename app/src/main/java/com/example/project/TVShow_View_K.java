@@ -20,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class TVShow_View_K extends AppCompatActivity {
 
+    String tv;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
 
