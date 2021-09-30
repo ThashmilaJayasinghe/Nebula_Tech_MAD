@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ManageBook"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ManageBooks" android:background="@drawable/backgrd">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar6"
+        android:layout_width="416dp"
+        android:layout_height="60dp"
+        android:background="#540022"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_AddBook"
+        android:layout_width="280dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="20dp"
+        android:text="Add Books"
+        android:textSize="16sp"
+        app:backgroundTint="#540022"
+        app:layout_constraintBottom_toTopOf="@+id/btn_UpdateBook"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_UpdateBook"
+        android:layout_width="280dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="124dp"
+        android:text="Update/ Delete Book"
+        android:textSize="16sp"
+        app:backgroundTint="#540022"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="433dp"
+        android:layout_height="319dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_AddBook"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar6"
+        app:srcCompat="@drawable/managebook" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
