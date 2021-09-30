@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(task.isSuccessful()) {
                     //redirecting to Home
-                    startActivity(new Intent(MainActivity.this, Profile.class));
+                    startActivity(new Intent(MainActivity.this, Home.class));
                 }else {
                     Toast.makeText(MainActivity.this, "Failed to login! Please check credentials", Toast.LENGTH_LONG).show();
                 }

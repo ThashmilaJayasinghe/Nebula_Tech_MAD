@@ -53,6 +53,20 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.firebaseui:firebase-ui-database:6.2.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.firebaseui:firebase-ui-database:8.0.0'
+
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //noinspection GradleCompatible,GradleCompatible
+    implementation 'com.android.support:design:28.0.0'
+
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+
 
     //Aditional Ramath
     implementation 'com.google.firebase:firebase-database:20.0.2'
@@ -72,3 +86,4 @@ dependencies {
     implementation 'com.orhanobut:dialogplus:1.11@aar'
 
 }
+
