@@ -1,7 +1,7 @@
 package com.example.project;
 
 public class User {
-
+    //test
     public String name, password, email;
 
     public User() {
