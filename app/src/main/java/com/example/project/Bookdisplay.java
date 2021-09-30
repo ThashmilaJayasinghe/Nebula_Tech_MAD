@@ -45,7 +45,7 @@ public class Bookdisplay extends AppCompatActivity {
         bookreview= findViewById(R.id.addreviewbook);
         confirm = findViewById(R.id.reviewconfirmbook);
         Rreview = findViewById(R.id.Rbook);
-        description= findViewById(R.id.bookdescription);
+        description= findViewById(R.id.moviedescription);
         description.setEnabled(false);
 
 

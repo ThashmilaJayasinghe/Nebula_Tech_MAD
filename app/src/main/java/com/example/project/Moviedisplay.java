@@ -28,9 +28,10 @@ public class Moviedisplay extends AppCompatActivity {
     private EditText moviewreview;
     private Button confirm;
     RecyclerView Rreview;
+    private EditText description;
 
     FirebaseDatabase firebaseDatabase,firebaseDatabase2;
-    DatabaseReference databaseReference, databaseReferenceR;
+    DatabaseReference databaseReference, databaseReferenceR,databaseReferenceI,databaseReferenceD;
 
 
     ArrayList<Moviereviews> list;
@@ -47,7 +48,9 @@ public class Moviedisplay extends AppCompatActivity {
         Rreview = findViewById(R.id.commentview);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReferenceR= firebaseDatabase.getReference("Book").child("-MkLSICLNkE3e7GEUhkf");
+        databaseReferenceR= firebaseDatabase.getReference("Movie").child("-MkMJRFCQcGrXrzo7fgM");
+        //des
+        databaseReferenceD= firebaseDatabase.getReference("Movie").child("-MkMJRFCQcGrXrzo7fgM");
         //recyclerview
         Rreview.setHasFixedSize(true);
         Rreview.setLayoutManager(new LinearLayoutManager(this));
@@ -56,7 +59,7 @@ public class Moviedisplay extends AppCompatActivity {
         Rreview.setAdapter(Movieadapter);
 
         //create instance
-        databaseReference = firebaseDatabase.getReference("Book").child("-MkLSICLNkE3e7GEUhkf").child("reviews");
+        databaseReference = firebaseDatabase.getReference("Movie").child("-MkMJRFCQcGrXrzo7fgM").child("reviews");
 
         //retrieve
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -72,6 +75,18 @@ public class Moviedisplay extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        databaseReferenceD.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String Description = snapshot.child("description").getValue().toString();
+                description.setText(Description);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });

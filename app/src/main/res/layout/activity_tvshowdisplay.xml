@@ -54,7 +54,7 @@
         />
 
     <EditText
-        android:id="@+id/bookdescription"
+        android:id="@+id/moviedescription"
         android:layout_width="403dp"
         android:layout_height="80dp"
         android:layout_marginTop="100dp"

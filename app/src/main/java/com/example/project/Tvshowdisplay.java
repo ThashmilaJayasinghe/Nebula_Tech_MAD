@@ -31,9 +31,10 @@ public class Tvshowdisplay extends AppCompatActivity {
     private Button confirm;
     RecyclerView Rreview;
     private ImageView img;
+    private EditText description;
 
     FirebaseDatabase firebaseDatabase,firebaseDatabase2;
-    DatabaseReference databaseReference, databaseReferenceR,databaseReferenceI;
+    DatabaseReference databaseReference, databaseReferenceR,databaseReferenceI,databaseReferenceD;
 
     ArrayList<Tvshowreviews> list;
     Tvshowadapter tvshowadapter;
@@ -52,12 +53,15 @@ public class Tvshowdisplay extends AppCompatActivity {
             confirm = findViewById(R.id.reviewconfirmtv);
             Rreview = findViewById(R.id.tvshowR);
             img= findViewById(R.id.imageView8);
+            description= findViewById(R.id.moviedescription);
 
             //database instance and reference
             firebaseDatabase = FirebaseDatabase.getInstance();
             databaseReferenceR = firebaseDatabase.getReference("TVShow").child("-MkMiBSz-svCP2tp2rx2");
             //for image
             databaseReferenceI= firebaseDatabase.getReference("TVShow").child("-MkMiBSz-svCP2tp2rx2");
+            //des
+            databaseReferenceD= firebaseDatabase.getReference("Book").child("-MkMiBSz-svCP2tp2rx2");
             //recyclerview
             Rreview.setHasFixedSize(true);
             Rreview.setLayoutManager(new LinearLayoutManager(this));
@@ -100,7 +104,18 @@ public class Tvshowdisplay extends AppCompatActivity {
 
                     }
                 });
+        databaseReferenceD.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String Description = snapshot.child("description").getValue().toString();
+                description.setText(Description);
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
 
             confirm.setOnClickListener(new View.OnClickListener() {

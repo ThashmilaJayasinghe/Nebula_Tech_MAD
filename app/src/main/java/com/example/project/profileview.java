@@ -50,7 +50,7 @@ public class profileview extends AppCompatActivity {
 
                 email.setText(Email);
                 name.setText(Username);
-                password.setText(Password);
+
             }
 
             @Override
