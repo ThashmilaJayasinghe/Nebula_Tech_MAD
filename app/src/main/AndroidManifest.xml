@@ -41,6 +41,27 @@
 
         android:theme="@style/Theme.Project">
         <activity
+
+            android:name=".Tvshowpoll"
+            android:exported="true" />
+        <activity
+            android:name=".Updateprofile"
+            android:exported="true" />
+        <activity
+            android:name=".profileview"
+            android:exported="true" />
+        <activity
+            android:name=".Moviedisplay"
+            android:exported="true" />
+        <activity
+            android:name=".Bookdisplay"
+            android:exported="true" />
+        <activity
+            android:name=".Tvshowdisplay"
+            android:exported="true" />
+        <activity
+            android:name=".ViewBooks"
+
             android:name=".AdminPage"
             android:exported="true"
             android:label="Admin Panel" />
@@ -51,6 +72,7 @@
             android:label="Update/ Delete TV Show"/>
         <activity
             android:name=".Registration_form"
+
             android:exported="true" />
         <activity
             android:name=".MmanageTV"
