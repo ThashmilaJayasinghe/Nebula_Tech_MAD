@@ -15,15 +15,12 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.core.Context;
-import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
+public class MyBookAdapter extends FirebaseRecyclerAdapter<
+        Review, MyBookAdapter.mybookViewholder> {
 
-public class ReviewAdapter extends FirebaseRecyclerAdapter<
-        Review, ReviewAdapter.reviewsViewholder> {
 
-    public ReviewAdapter(
+    public MyBookAdapter(
             @NonNull FirebaseRecyclerOptions<Review> options)
     {
         super(options);
@@ -36,12 +33,13 @@ public class ReviewAdapter extends FirebaseRecyclerAdapter<
     // model class(here "person.class")
     @Override
     protected void
-    onBindViewHolder(@NonNull reviewsViewholder holder,
+    onBindViewHolder(@NonNull MyBookAdapter.mybookViewholder holder,
                      int position, @NonNull Review model)
     {
         //delete
-        DatabaseReference mbase, bbase, tbase;
+        DatabaseReference mbase;
         mbase = FirebaseDatabase.getInstance().getReference("MyBookReviews");
+
 
 
         final DatabaseReference itemRef = getRef(position);
@@ -62,32 +60,36 @@ public class ReviewAdapter extends FirebaseRecyclerAdapter<
 
     @NonNull
     @Override
-    public reviewsViewholder
+    public MyBookAdapter.mybookViewholder
     onCreateViewHolder(@NonNull ViewGroup parent,
                        int viewType)
     {
         View view
                 = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.review, parent, false);
-        return new ReviewAdapter.reviewsViewholder(view);
+                .inflate(R.layout.mybookreview, parent, false);
+        return new MyBookAdapter.mybookViewholder(view);
     }
-    class reviewsViewholder
+    class mybookViewholder
             extends RecyclerView.ViewHolder {
         TextView title, review;
         ImageView image;
         Button delBtn;
 
-        public reviewsViewholder(@NonNull View itemView)
+        public mybookViewholder(@NonNull View itemView)
         {
             super(itemView);
 
-            title = itemView.findViewById(R.id.tv_title);
-            review = itemView.findViewById(R.id.tv_review);
-            image = itemView.findViewById(R.id.iv_image);
-            delBtn = itemView.findViewById(R.id.btn_delete);
+            title = itemView.findViewById(R.id.tv_brtitle);
+            review = itemView.findViewById(R.id.tv_brreview);
+            image = itemView.findViewById(R.id.iv_brimage);
+            delBtn = itemView.findViewById(R.id.btn_brdelete);
 
         }
     }
+
+
+
+
 
 
 

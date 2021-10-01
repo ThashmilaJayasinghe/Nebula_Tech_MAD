@@ -36,7 +36,8 @@ public class tvshowAdapter_K extends FirebaseRecyclerAdapter<TvshowModel_K,tvsho
         holder.btnReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext() ,Admin_TVShowReview.class);
+//                Intent intent = new Intent(view.getContext() ,Admin_TVShowReview.class);
+                Intent intent = new Intent(view.getContext() ,Tvshowdisplay.class);
                 intent.putExtra("postkey",postkey);
                 view.getContext().startActivity(intent);
             }

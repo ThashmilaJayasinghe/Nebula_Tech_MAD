@@ -15,15 +15,11 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.core.Context;
-import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
+public class MyTVAdapter extends FirebaseRecyclerAdapter<
+        Review, MyTVAdapter.mytvViewholder> {
 
-public class ReviewAdapter extends FirebaseRecyclerAdapter<
-        Review, ReviewAdapter.reviewsViewholder> {
-
-    public ReviewAdapter(
+    public MyTVAdapter(
             @NonNull FirebaseRecyclerOptions<Review> options)
     {
         super(options);
@@ -36,12 +32,12 @@ public class ReviewAdapter extends FirebaseRecyclerAdapter<
     // model class(here "person.class")
     @Override
     protected void
-    onBindViewHolder(@NonNull reviewsViewholder holder,
+    onBindViewHolder(@NonNull MyTVAdapter.mytvViewholder holder,
                      int position, @NonNull Review model)
     {
         //delete
-        DatabaseReference mbase, bbase, tbase;
-        mbase = FirebaseDatabase.getInstance().getReference("MyBookReviews");
+        DatabaseReference mbase;
+        mbase = FirebaseDatabase.getInstance().getReference("MyTVshowReviews");
 
 
         final DatabaseReference itemRef = getRef(position);
@@ -62,32 +58,33 @@ public class ReviewAdapter extends FirebaseRecyclerAdapter<
 
     @NonNull
     @Override
-    public reviewsViewholder
+    public MyTVAdapter.mytvViewholder
     onCreateViewHolder(@NonNull ViewGroup parent,
                        int viewType)
     {
         View view
                 = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.review, parent, false);
-        return new ReviewAdapter.reviewsViewholder(view);
+                .inflate(R.layout.mytvreview, parent, false);
+        return new MyTVAdapter.mytvViewholder(view);
     }
-    class reviewsViewholder
+    class mytvViewholder
             extends RecyclerView.ViewHolder {
         TextView title, review;
         ImageView image;
         Button delBtn;
 
-        public reviewsViewholder(@NonNull View itemView)
+        public mytvViewholder(@NonNull View itemView)
         {
             super(itemView);
 
-            title = itemView.findViewById(R.id.tv_title);
-            review = itemView.findViewById(R.id.tv_review);
-            image = itemView.findViewById(R.id.iv_image);
-            delBtn = itemView.findViewById(R.id.btn_delete);
+            title = itemView.findViewById(R.id.tv_trtitle);
+            review = itemView.findViewById(R.id.tv_trreview);
+            image = itemView.findViewById(R.id.iv_trimage);
+            delBtn = itemView.findViewById(R.id.btn_trdelete);
 
         }
     }
+
 
 
 
