@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/text"
-    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/w10"
-    tools:context=".ViewBooks"
-    tools:visibility="visible">
-
+    tools:context=".viewtv">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar4"
@@ -23,6 +20,26 @@
         app:layout_constraintTop_toTopOf="parent"
         app:titleTextColor="@color/white" />
 
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="222dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginLeft="106dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginRight="106dp"
+        android:layout_marginBottom="9dp"
+
+        android:text=" Manage TV Shows"
+        android:textColor="#131313"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/recview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar4" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recview"
         android:layout_width="395dp"
@@ -35,25 +52,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="199dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="106dp"
-        android:layout_marginLeft="106dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="106dp"
-        android:layout_marginRight="106dp"
-        android:layout_marginBottom="16dp"
-        android:text="   Manage Books"
-        android:textColor="#131313"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/recview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar4" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
