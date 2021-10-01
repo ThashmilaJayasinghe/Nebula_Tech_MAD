@@ -70,6 +70,13 @@
             android:name=".Tvshowdisplay"
             android:exported="true" />
         <activity
+
+            android:name=".ViewBooks"
+            android:exported="true"
+            android:label="Update/Delete"/>
+        <activity
+
+
             android:name=".AdminPage"
             android:exported="true"
             android:label="Admin Panel" />
@@ -93,10 +100,7 @@
             android:name=".ViewMovies"
             android:exported="true"
             android:label="Update/ Delete Movie" />
-        <activity
-            android:name=".ViewBooks"
-            android:exported="true"
-            android:label="Update/ Delete Book" />
+
         <activity
             android:name=".ManageBooks"
             android:exported="true"

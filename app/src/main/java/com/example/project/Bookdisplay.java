@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,7 +56,7 @@ public class Bookdisplay extends AppCompatActivity {
         //for description
         databaseReferenceD= firebaseDatabase.getReference("Book").child("-MkIhcvghnveftcABZMp");
         //for image
-        //databaseReferenceI= firebaseDatabase.getReference("Book").child("-MkIhcvghnveftcABZMp").child("url");
+        databaseReferenceI= firebaseDatabase.getReference("Book").child("-MkIhcvghnveftcABZMp");
         //recyclerview
         Rreview.setHasFixedSize(true);
         Rreview.setLayoutManager(new LinearLayoutManager(this));
@@ -83,6 +84,19 @@ public class Bookdisplay extends AppCompatActivity {
 
             }
 
+        });
+        //image
+        databaseReferenceI.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String url = snapshot.child("imageUrl").getValue().toString();
+                Picasso.get().load(url).into(img);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
         });
         //retrieve description
         databaseReferenceD.addValueEventListener(new ValueEventListener() {

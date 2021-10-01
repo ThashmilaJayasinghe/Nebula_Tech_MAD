@@ -8,8 +8,6 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,7 +38,7 @@ public class Registration_form extends AppCompatActivity implements View.OnClick
         registeruser = (Button) findViewById(R.id.button6);
         registeruser.setOnClickListener(this);
 
-        editTextTextPersonName3 = (EditText) findViewById(R.id.editTextTextPersonName3);
+        editTextTextPersonName3 = (EditText) findViewById(R.id.UserNameDisplay);
         editTextTextEmailAddress = (EditText) findViewById(R.id.editTextTextEmailAddress);
         editTextTextPassword = (EditText) findViewById(R.id.editTextTextPassword);
 

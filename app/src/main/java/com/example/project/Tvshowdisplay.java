@@ -52,7 +52,7 @@ public class Tvshowdisplay extends AppCompatActivity {
             tvshowreview = findViewById(R.id.addreviewtv);
             confirm = findViewById(R.id.reviewconfirmtv);
             Rreview = findViewById(R.id.tvshowR);
-            img= findViewById(R.id.imageView8);
+            img= findViewById(R.id.tvshowimage);
             description= findViewById(R.id.moviedescription);
 
             //database instance and reference
@@ -91,7 +91,7 @@ public class Tvshowdisplay extends AppCompatActivity {
 
             });
 
-
+                //image
                 databaseReferenceI.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
