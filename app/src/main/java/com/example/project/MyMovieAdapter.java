@@ -50,6 +50,7 @@ public class MyMovieAdapter extends FirebaseRecyclerAdapter<
         nbase = FirebaseDatabase.getInstance().getReference("Movie");
 
 
+
         final DatabaseReference itemRef = getRef(position);
         final String myKey = itemRef.getKey();
 
@@ -58,6 +59,8 @@ public class MyMovieAdapter extends FirebaseRecyclerAdapter<
             public void onClick(View v) {
 
                 mbase.child(myKey).removeValue();
+                nbase.child(model.getLockey()).child("reviews").child(uid).removeValue();
+
             }
         });
 

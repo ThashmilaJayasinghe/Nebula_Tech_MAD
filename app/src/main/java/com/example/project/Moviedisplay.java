@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -14,6 +15,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,6 +41,11 @@ public class Moviedisplay extends AppCompatActivity {
     //object of adapter
     movieadapter Movieadapter;
 
+    //adding reviews **********************************************************************************
+    String postkey;
+    Review myreview;
+    //***********************************************************************************************
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +54,15 @@ public class Moviedisplay extends AppCompatActivity {
         moviewreview = findViewById(R.id.addreview);
         confirm = findViewById(R.id.reviewconfirm);
         Rreview = findViewById(R.id.commentview);
+
+        //adding review *****************************************************************************
+
+        //Change values here!
+        Intent intent = getIntent();
+//        postkey = intent.getStringExtra(.postkey);
+        postkey = "-MkMJRFCQcGrXrzo7fgM";
+
+        //adding review *****************************************************************************
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReferenceR= firebaseDatabase.getReference("Movie").child("-MkMJRFCQcGrXrzo7fgM");
@@ -118,11 +135,45 @@ public class Moviedisplay extends AppCompatActivity {
         HashMap cmnt = new HashMap();
         cmnt.put("review", Review);
 
+        //adding reviews *****************************************************************************
+
+        DatabaseReference revbase = FirebaseDatabase.getInstance().getReference("MyMovieReviews");
+        FirebaseUser ruser = FirebaseAuth.getInstance().getCurrentUser();
+//        String ruid = ruser.getUid();
+        String ruid = "id500";
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Movie");
+
+        reference.orderByKey().equalTo(postkey).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot datas: dataSnapshot.getChildren()){
+                    myreview.setTitle(datas.child("title").getValue(String.class));
+                    myreview.setImage(datas.child("image").getValue(String.class));
+                    myreview.setUid(ruid);
+                    myreview.setLockey(postkey);
+                    myreview.setReview(Review);
+
+//                    String vehicle_type = datas.child("v_tpe").getValue(String.class);
+//                    book.setTitle(et_bktitle.getText().toString().trim());
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                throw databaseError.toException();
+            }
+        });
+
+        //adding reviews ******************************************************************************
+
         databaseReference.child(randomkey).updateChildren(cmnt).addOnCompleteListener(new OnCompleteListener() {
             @Override
             public void onComplete(@NonNull Task task) {
-                if (task.isSuccessful())
+                if (task.isSuccessful()) {
                     Toast.makeText(Moviedisplay.this, "data added", Toast.LENGTH_SHORT).show();
+                    //******************************************************************
+                    revbase.push().setValue(myreview);
+                }
                 else
                     Toast.makeText(Moviedisplay.this, "data  not added", Toast.LENGTH_SHORT).show();
             }
