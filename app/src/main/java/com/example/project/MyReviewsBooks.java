@@ -7,18 +7,26 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+
+import java.util.ArrayList;
 
 public class MyReviewsBooks extends AppCompatActivity {
 
+
     private RecyclerView recyclerView;
-    ReviewAdapter
-            adapter; // Create Object of the Adapter class
+    MyBookAdapter adapter; // Create Object of the Adapter class
     DatabaseReference mbase; // Create object of the
     // Firebase Realtime Database
+
 
 
     @Override
@@ -32,27 +40,35 @@ public class MyReviewsBooks extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
+
+
+        // Create a instance of the database and get
+        // its reference
         mbase
                 = FirebaseDatabase.getInstance().getReference("MyBookReviews");
 
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//        String uid = user.getUid();
+        String uid = "id451";
+
+
         recyclerView = findViewById(R.id.rv_reviews);
 
-        // To display the Recycler view linearly
         recyclerView.setLayoutManager(
                 new LinearLayoutManager(this));
 
-        // It is a class provide by the FirebaseUI to make a
-        // query in the database to fetch appropriate data
+        Query query = FirebaseDatabase.getInstance().getReference("MyBookReviews")
+                .orderByChild("uid").equalTo(uid);
+
         FirebaseRecyclerOptions<Review> options
                 = new FirebaseRecyclerOptions.Builder<Review>()
-                .setQuery(mbase, Review.class)
+                .setQuery(query, Review.class)
                 .build();
-        // Connecting object of required Adapter class to
-        // the Adapter class itself
-        adapter = new ReviewAdapter(options);
+
+        adapter = new MyBookAdapter(options);
+
         // Connecting Adapter class with the Recycler view*/
         recyclerView.setAdapter(adapter);
-
 
     }
 
@@ -63,17 +79,12 @@ public class MyReviewsBooks extends AppCompatActivity {
         return true;
     }
 
-
-    // Function to tell the app to start getting
-    // data from database on starting of the activity
     @Override protected void onStart()
     {
         super.onStart();
         adapter.startListening();
     }
 
-    // Function to tell the app to stop getting
-    // data from database on stoping of the activity
     @Override protected void onStop()
     {
         super.onStop();

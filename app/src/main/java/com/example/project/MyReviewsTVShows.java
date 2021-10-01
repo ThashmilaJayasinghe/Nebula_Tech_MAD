@@ -9,15 +9,17 @@ import android.os.Bundle;
 import android.view.Menu;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 public class MyReviewsTVShows extends AppCompatActivity {
 
 
     private RecyclerView recyclerView;
-    ReviewAdapter
-            adapter; // Create Object of the Adapter class
+    MyTVAdapter adapter; // Create Object of the Adapter class
     DatabaseReference mbase; // Create object of the
     // Firebase Realtime Database
 
@@ -40,22 +42,29 @@ public class MyReviewsTVShows extends AppCompatActivity {
         mbase
                 = FirebaseDatabase.getInstance().getReference("MyTVshowReviews");
 
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//        String uid = user.getUid();
+        String uid = "id451";
+
+
         recyclerView = findViewById(R.id.rv_reviews);
 
         // To display the Recycler view linearly
         recyclerView.setLayoutManager(
                 new LinearLayoutManager(this));
 
-        // It is a class provide by the FirebaseUI to make a
-        // query in the database to fetch appropriate data
+        Query query = FirebaseDatabase.getInstance().getReference("MyTVshowReviews")
+                .orderByChild("uid").equalTo(uid);
+
+
         FirebaseRecyclerOptions<Review> options
                 = new FirebaseRecyclerOptions.Builder<Review>()
-                .setQuery(mbase, Review.class)
+                .setQuery(query, Review.class)
                 .build();
-        // Connecting object of required Adapter class to
-        // the Adapter class itself
-        adapter = new ReviewAdapter(options);
-        // Connecting Adapter class with the Recycler view*/
+
+
+        adapter = new MyTVAdapter(options);
+
         recyclerView.setAdapter(adapter);
 
     }
