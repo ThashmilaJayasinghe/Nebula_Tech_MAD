@@ -35,19 +35,18 @@
             app:layout_constraintVertical_bias="0.604"
             app:srcCompat="@drawable/avatar" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:text="username"
+        <TextView
+            android:id="@+id/DPUsername"
+            android:layout_width="172dp"
+            android:layout_height="28dp"
+            android:gravity="center"
+            android:text="TextView"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.881" />
+            app:layout_constraintVertical_bias="0.831" />
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar2"
@@ -134,7 +133,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
-        android:text="Gender"
+        android:text="Password"
         android:textColor="#9ca5aa"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -145,26 +144,27 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/Ppassword"
+        android:id="@+id/PPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="9dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Male"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gender"
-        app:layout_constraintVertical_bias="0.121" />
+        app:layout_constraintVertical_bias="0.121"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/Updateconfirm"
+        android:id="@+id/ProfileUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="update"
         android:text="@string/btn_updateprofile"
         app:backgroundTint="#540022"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -42,7 +42,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/tvshowimage"
         android:layout_width="159dp"
         android:layout_height="150dp"
         app:layout_constraintBottom_toBottomOf="@id/linearLayout3"
