@@ -1,4 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#540022">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:menu="@menu/searchmenu"
+        app:popupTheme="@dimen/cardview_compat_inset_shadow"
+        app:title="Review"
+        app:titleTextColor="@color/cardview_light_background" />
+
+<!--    <RelativeLayout-->
+<!--         android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="16dp">-->
+<!--        <ImageView android:layout_height="wrap_content"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:id="@+id/left_icon"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:src="@drawable/ic_baseline_arrow_back_24"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:id="@+id/toolbar_title"-->
+<!--            android:layout_toEndOf="@id/left_icon"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:text="Manage TV Show Review"-->
+<!--            />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/right_icon"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:src="@drawable/ic_baseline_menu_24" />-->
+<!--    </RelativeLayout>-->
+
+</RelativeLayout>
+
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -9,3 +60,4 @@
     >
 
 </androidx.appcompat.widget.Toolbar>
+
