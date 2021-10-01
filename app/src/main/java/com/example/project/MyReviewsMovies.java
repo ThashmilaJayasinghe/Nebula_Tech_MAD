@@ -1,5 +1,6 @@
 package com.example.project;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,16 +8,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.ktx.Firebase;
 
 public class MyReviewsMovies extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    ReviewAdapter
-            adapter; // Create Object of the Adapter class
+    MyMovieAdapter adapter; // Create Object of the Adapter class
     DatabaseReference mbase; // Create object of the
     // Firebase Realtime Database
 
@@ -38,17 +46,25 @@ public class MyReviewsMovies extends AppCompatActivity {
         mbase
                 = FirebaseDatabase.getInstance().getReference("MyMovieReviews");
 
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//        String uid = user.getUid();
+        String uid = "id451";
+
+
         recyclerView = findViewById(R.id.rv_reviews);
 
         recyclerView.setLayoutManager(
                 new LinearLayoutManager(this));
 
+        Query query = FirebaseDatabase.getInstance().getReference("MyMovieReviews")
+                .orderByChild("uid").equalTo(uid);
+
         FirebaseRecyclerOptions<Review> options
                 = new FirebaseRecyclerOptions.Builder<Review>()
-                .setQuery(mbase, Review.class)
+                .setQuery(query, Review.class)
                 .build();
 
-        adapter = new ReviewAdapter(options);
+        adapter = new MyMovieAdapter(options);
 
         // Connecting Adapter class with the Recycler view*/
         recyclerView.setAdapter(adapter);
@@ -73,6 +89,5 @@ public class MyReviewsMovies extends AppCompatActivity {
         super.onStop();
         adapter.stopListening();
     }
-
 
 }
