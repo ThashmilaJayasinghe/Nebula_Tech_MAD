@@ -102,11 +102,6 @@
             android:exported="true"
             android:label="Manage Books" />
  
-
-
-
-
- 
         <activity
             android:name=".Profile"
             android:exported="true" />
@@ -163,8 +158,12 @@
             android:name=".MyReviews"
             android:exported="true"
             android:label="My Reviews" />
-        <activity android:name=".MainActivity">
 
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
