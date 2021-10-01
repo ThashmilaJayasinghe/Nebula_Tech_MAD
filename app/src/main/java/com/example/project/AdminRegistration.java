@@ -77,7 +77,7 @@ public class AdminRegistration extends AppCompatActivity implements View.OnClick
              return;
 
          }
-
+        //test
          if (email.isEmpty()) {
              editTextTextEmailAddress.setError("Please enter email!!");
              editTextTextEmailAddress.requestFocus();
