@@ -12,51 +12,58 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project">
         <activity
+            android:name=".AdminRegistration"
+            android:exported="true" />
+        <activity
             android:name=".AdminPage"
             android:exported="true"
             android:label="Admin Panel" />
-
         <activity
             android:name=".viewtv"
             android:exported="true"
-            android:label="Update/ Delete TV Show"/>
+            android:label="Update/ Delete TV Show"
+            android:parentActivityName=".MmanageTV"/>
         <activity
             android:name=".Registration_form"
             android:exported="true" />
         <activity
             android:name=".MmanageTV"
             android:exported="true"
-            android:label="Manage TV Shows" />
+            android:label="Manage TV Shows"
+            android:parentActivityName=".AdminPage"/>
         <activity
             android:name=".ManageMovies"
             android:exported="true"
-            android:label="Manage Movies" />
+            android:label="Manage Movies"
+            android:parentActivityName=".AdminPage"/>
         <activity
             android:name=".ViewMovies"
             android:exported="true"
-            android:label="Update/ Delete Movie" />
+            android:label="Update/ Delete Movie"
+            android:parentActivityName=".ManageMovies"/>
         <activity
             android:name=".ViewBooks"
             android:exported="true"
-            android:label="Update/ Delete Book" />
+            android:label="Update/ Delete Book"
+            android:parentActivityName=".ManageBooks"/>
         <activity
             android:name=".ManageBooks"
             android:exported="true"
-            android:label="Manage Books" />
-
-
-
+            android:label="Manage Books"
+            android:parentActivityName=".AdminPage"/>
         <activity
             android:name=".Profile"
             android:exported="true" />
         <activity
             android:name=".AddTVShow"
             android:exported="true"
-            android:label="Add TV Show" />
+            android:label="Add TV Show"
+            android:parentActivityName=".MmanageTV"/>
         <activity
             android:name=".AddMovie"
             android:exported="true"
-            android:label="Add Movie" />
+            android:label="Add Movie"
+            android:parentActivityName=".ManageMovies"/>
         <activity
             android:name=".MyReviewsTVShows"
             android:exported="true"
@@ -82,7 +89,8 @@
         <activity
             android:name=".AddBook"
             android:exported="true"
-            android:label="Add Book" />
+            android:label="Add Book"
+            android:parentActivityName=".ManageBooks"/>
         <activity
             android:name=".MostPopular"
             android:exported="true"
