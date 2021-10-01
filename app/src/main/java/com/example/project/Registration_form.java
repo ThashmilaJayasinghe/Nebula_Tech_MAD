@@ -28,7 +28,7 @@ public class Registration_form extends AppCompatActivity implements View.OnClick
 
 
 
-    private FirebaseAuth mAuth;
+    private FirebaseAuth mAuth;//test
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
