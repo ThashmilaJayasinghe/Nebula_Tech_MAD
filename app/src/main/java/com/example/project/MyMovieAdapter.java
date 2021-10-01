@@ -29,7 +29,7 @@ public class MyMovieAdapter extends FirebaseRecyclerAdapter<
         super(options);
     }
 
-
+//comment
 
     // Function to bind the view in Card view(here
     // "person.xml") iwth data in
