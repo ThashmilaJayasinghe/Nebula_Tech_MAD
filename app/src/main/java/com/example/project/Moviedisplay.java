@@ -42,8 +42,8 @@ public class Moviedisplay extends AppCompatActivity {
     movieadapter Movieadapter;
 
     //adding reviews **********************************************************************************
-    String postkey;
-    Review myreview;
+//    String postkey;
+//    Review myreview;
     //***********************************************************************************************
 
 
@@ -58,9 +58,9 @@ public class Moviedisplay extends AppCompatActivity {
         //adding review *****************************************************************************
 
         //Change values here!
-        Intent intent = getIntent();
-//        postkey = intent.getStringExtra(.postkey);
-        postkey = "-MkMJRFCQcGrXrzo7fgM";
+//        Intent intent = getIntent();
+//        postkey=getIntent().getStringExtra("postkey");
+        //postkey = "-MkMJRFCQcGrXrzo7fgM";
 
         //adding review *****************************************************************************
 
@@ -137,32 +137,32 @@ public class Moviedisplay extends AppCompatActivity {
 
         //adding reviews *****************************************************************************
 
-        DatabaseReference revbase = FirebaseDatabase.getInstance().getReference("MyMovieReviews");
-        FirebaseUser ruser = FirebaseAuth.getInstance().getCurrentUser();
-//        String ruid = ruser.getUid();
-        String ruid = "id500";
-
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Movie");
-
-        reference.orderByKey().equalTo(postkey).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot datas: dataSnapshot.getChildren()){
-                    myreview.setTitle(datas.child("title").getValue(String.class));
-                    myreview.setImage(datas.child("image").getValue(String.class));
-                    myreview.setUid(ruid);
-                    myreview.setLockey(postkey);
-                    myreview.setReview(Review);
-
-//                    String vehicle_type = datas.child("v_tpe").getValue(String.class);
-//                    book.setTitle(et_bktitle.getText().toString().trim());
-                }
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                throw databaseError.toException();
-            }
-        });
+//        DatabaseReference revbase = FirebaseDatabase.getInstance().getReference("MyMovieReviews");
+//        FirebaseUser ruser = FirebaseAuth.getInstance().getCurrentUser();
+////        String ruid = ruser.getUid();
+//        String ruid = "id500";
+//
+//        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Movie");
+//
+//        reference.orderByKey().equalTo(postkey).addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                for(DataSnapshot datas: dataSnapshot.getChildren()){
+//                    myreview.setTitle(datas.child("title").getValue(String.class));
+//                    myreview.setImage(datas.child("image").getValue(String.class));
+//                    myreview.setUid(ruid);
+//                    myreview.setLockey(postkey);
+//                    myreview.setReview(Review);
+//
+////                    String vehicle_type = datas.child("v_tpe").getValue(String.class);
+////                    book.setTitle(et_bktitle.getText().toString().trim());
+//                }
+//            }
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                throw databaseError.toException();
+//            }
+//        });
 
         //adding reviews ******************************************************************************
 
@@ -172,7 +172,7 @@ public class Moviedisplay extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     Toast.makeText(Moviedisplay.this, "data added", Toast.LENGTH_SHORT).show();
                     //******************************************************************
-                    revbase.push().setValue(myreview);
+//                    revbase.push().setValue(myreview);
                 }
                 else
                     Toast.makeText(Moviedisplay.this, "data  not added", Toast.LENGTH_SHORT).show();

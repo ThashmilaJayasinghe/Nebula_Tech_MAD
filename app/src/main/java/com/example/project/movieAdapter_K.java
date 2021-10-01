@@ -38,7 +38,8 @@ public class movieAdapter_K extends FirebaseRecyclerAdapter<MovieModel_K,movieAd
         holder.btnReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext() ,Admin_MovieReview.class);
+//                Intent intent = new Intent(view.getContext() ,Admin_MovieReview.class);
+                Intent intent = new Intent(view.getContext() ,Moviedisplay.class);
                 intent.putExtra("postkey",postkey);
                 view.getContext().startActivity(intent);
             }
