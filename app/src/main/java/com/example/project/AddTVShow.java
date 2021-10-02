@@ -108,7 +108,7 @@ public class AddTVShow extends AppCompatActivity {
         et_tvgenre.setText("");
         et_tvseasons.setText("");
         et_tvdescription.setText("");
-        iv_tv.setImageResource(R.drawable.tv1);
+        iv_tv.setImageResource(android.R.color.transparent);
     }
 
     private String getFileExtension(Uri uri) {

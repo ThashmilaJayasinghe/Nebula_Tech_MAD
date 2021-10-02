@@ -62,7 +62,11 @@
             android:exported="true" />
         <activity
             android:name=".Moviedisplay"
-            android:exported="true" />
+            android:exported="true" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Movie_View_K" />
+        </activity>
         <activity
             android:name=".Bookdisplay"
             android:exported="true" />

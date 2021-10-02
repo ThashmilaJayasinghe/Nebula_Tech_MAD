@@ -20,25 +20,10 @@
         android:layout_height="50dp"
         android:layout_marginTop="70dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="8dp"
         android:backgroundTint="@color/maroon"
         android:text="@string/btn_AddPhoto"
-        app:layout_constraintBottom_toTopOf="@+id/btn_bkcamera"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addbktoolbar"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/btn_bkcamera"
-        android:layout_width="135dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@color/maroon"
-        android:text="@string/btn_TakePhoto"
-        app:layout_constraintEnd_toEndOf="@+id/btn_bkphoto"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/btn_bkphoto"
-        app:layout_constraintTop_toBottomOf="@+id/btn_bkphoto" />
+        app:layout_constraintTop_toBottomOf="@+id/addbktoolbar" />
 
     <ImageView
         android:id="@+id/iv_bk"
@@ -49,8 +34,7 @@
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toStartOf="@+id/btn_bkphoto"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addbktoolbar"
-        app:srcCompat="@drawable/book1" />
+        app:layout_constraintTop_toBottomOf="@+id/addbktoolbar" />
 
     <TextView
         android:id="@+id/textView2"

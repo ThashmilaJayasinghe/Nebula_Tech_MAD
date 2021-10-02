@@ -105,7 +105,7 @@ public class AddBook extends AppCompatActivity {
         et_bkauthor.setText("");
         et_bkisbn.setText("");
         et_bkdescription.setText("");
-        iv_bk.setImageResource(R.drawable.book1);
+        iv_bk.setImageResource(android.R.color.transparent);
     }
 
     private String getFileExtension(Uri uri) {

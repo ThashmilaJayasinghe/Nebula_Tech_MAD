@@ -145,9 +145,9 @@ public class Bookdisplay extends AppCompatActivity {
     }
     //add reviews to database
     private void addDatatoFirebase ( String Review) {
-        String id= "id";
-
-        String randomkey = id+""+new Random().nextInt(1000);
+//        String id= "id";
+//
+//        String randomkey = id+""+new Random().nextInt(1000);
 
         FirebaseUser ruser = FirebaseAuth.getInstance().getCurrentUser();
         String ruid = ruser.getUid();
@@ -173,8 +173,6 @@ public class Bookdisplay extends AppCompatActivity {
                     title = datas.child("title").getValue(String.class);
                     image = datas.child("imageUrl").getValue(String.class);
 
-//                    String vehicle_type = datas.child("v_tpe").getValue(String.class);
-//                    book.setTitle(et_bktitle.getText().toString().trim());
                 }
 
                 myreview.setUid(ruid);

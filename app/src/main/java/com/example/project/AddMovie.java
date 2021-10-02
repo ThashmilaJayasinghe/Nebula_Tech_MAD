@@ -108,7 +108,7 @@ public class AddMovie extends AppCompatActivity {
         et_mvgenre.setText("");
         et_mvdirector.setText("");
         et_mvdescription.setText("");
-        iv_mv.setImageResource(R.drawable.mv1);
+        iv_mv.setImageResource(android.R.color.transparent);
     }
 
     private String getFileExtension(Uri uri) {
