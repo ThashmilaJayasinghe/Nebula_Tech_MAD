@@ -37,7 +37,8 @@ public class bookAdaptar_K extends FirebaseRecyclerAdapter<BookModel_K,bookAdapt
         holder.btnReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext() ,Admin_BookReview.class);
+//                Intent intent = new Intent(view.getContext() ,Admin_BookReview.class);
+                Intent intent = new Intent(view.getContext() ,Bookdisplay.class);
                 intent.putExtra("postkey",postkey);
                 view.getContext().startActivity(intent);
             }

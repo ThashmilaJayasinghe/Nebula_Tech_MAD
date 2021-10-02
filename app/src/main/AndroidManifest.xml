@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.project">
+
+
+    package="com.example.project"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,6 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project"
+
         tools:replace="android:appComponentFactory">
         <activity
             android:name=".Admin_TVShow_View_K"
@@ -22,6 +28,14 @@
             android:exported="true" />
         <activity
             android:name=".Admin_Book_View_K"
+
+        tools:replace="android:appComponentFactory"
+        android:appComponentFactory="android.support.v4.app.CoreComponentFactory">
+
+
+        <activity
+            android:name=".AdminRegistration"
+
             android:exported="true" />
         <activity
             android:name=".Admin_TVShowReview"
@@ -44,6 +58,30 @@
         <activity
             android:name=".Home"
             android:exported="true" />
+
+
+
+
+        <activity
+
+            android:name=".Tvshowpoll"
+            android:exported="true" />
+        <activity
+            android:name=".Updateprofile"
+            android:exported="true" />
+        <activity
+            android:name=".profileview"
+            android:exported="true" />
+        <activity
+            android:name=".Moviedisplay"
+            android:exported="true" />
+        <activity
+            android:name=".Bookdisplay"
+            android:exported="true" />
+        <activity
+            android:name=".Tvshowdisplay"
+            android:exported="true" />
+
         <activity
             android:name=".AdminPage"
             android:exported="true"
@@ -51,41 +89,122 @@
         <activity
             android:name=".viewtv"
             android:exported="true"
+
             android:label="Update/ Delete TV Show" />
+
+            android:label="Update/ Delete TV Show"
+            android:parentActivityName=".MmanageTV">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MmanageTV" />
+
+        </activity>
+
+
         <activity
             android:name=".Registration_form"
+
             android:exported="true" />
         <activity
             android:name=".MmanageTV"
             android:exported="true"
-            android:label="Manage TV Shows" />
+            android:label="Manage TV Shows"
+            android:parentActivityName=".AdminPage">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AdminPage" />
+
+        </activity>
+
         <activity
             android:name=".ManageMovies"
             android:exported="true"
-            android:label="Manage Movies" />
+            android:label="Manage Movies"
+            android:parentActivityName=".AdminPage">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AdminPage" />
+
+        </activity>
+
         <activity
             android:name=".ViewMovies"
             android:exported="true"
-            android:label="Update/ Delete Movie" />
+            android:label="Update/ Delete Movie"
+            android:parentActivityName=".ManageMovies">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ManageMovies" />
+
+        </activity>
+
         <activity
             android:name=".ViewBooks"
             android:exported="true"
-            android:label="Update/ Delete Book" />
+            android:label="Update/ Delete Book"
+            android:parentActivityName=".ManageBooks">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ManageBooks" />
+        </activity>
+
+
         <activity
             android:name=".ManageBooks"
             android:exported="true"
+
             android:label="Manage Books" />
+
+            android:label="Manage Books"
+            android:parentActivityName=".AdminPage">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AdminPage" />
+
+        </activity>
+
+
         <activity
             android:name=".Profile"
             android:exported="true" />
         <activity
             android:name=".AddTVShow"
             android:exported="true"
-            android:label="Add TV Show" />
+            android:label="Add TV Show"
+            android:parentActivityName=".MmanageTV">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MmanageTV" />
+
+        </activity>
+
         <activity
             android:name=".AddMovie"
             android:exported="true"
-            android:label="Add Movie" />
+            android:label="Add Movie"
+            android:parentActivityName=".ManageMovies">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ManageMovies" />
+
+        </activity>
+
         <activity
             android:name=".MyReviewsTVShows"
             android:exported="true"
@@ -103,6 +222,7 @@
             android:label="My Reviews - Movies"
             android:parentActivityName=".MyReviews">
 
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -111,7 +231,15 @@
         <activity
             android:name=".AddBook"
             android:exported="true"
-            android:label="Add Book" />
+            android:label="Add Book"
+            android:parentActivityName=".ManageBooks">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ManageBooks" />
+        </activity>
+
         <activity
             android:name=".MostPopular"
             android:exported="true"
@@ -131,10 +259,10 @@
             android:name=".MyReviews"
             android:exported="true"
             android:label="My Reviews" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
