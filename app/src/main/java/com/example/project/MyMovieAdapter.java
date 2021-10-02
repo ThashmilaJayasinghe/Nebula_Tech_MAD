@@ -42,8 +42,8 @@ public class MyMovieAdapter extends FirebaseRecyclerAdapter<
         //delete
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//        String uid = user.getUid();
-        String uid = "WuylE2qPCLXfTw4NnNu1XSOTbJg2";
+        String uid = user.getUid();
+//        String uid = "WuylE2qPCLXfTw4NnNu1XSOTbJg2";
 
         DatabaseReference mbase, nbase;
         mbase = FirebaseDatabase.getInstance().getReference("MyMovieReviews");

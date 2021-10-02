@@ -43,8 +43,8 @@ public class MyReviewsTVShows extends AppCompatActivity {
                 = FirebaseDatabase.getInstance().getReference("MyTVshowReviews");
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//        String uid = user.getUid();
-        String uid = "id451";
+        String uid = user.getUid();
+//        String uid = "id451";
 
 
         recyclerView = findViewById(R.id.rv_reviews);
@@ -91,8 +91,5 @@ public class MyReviewsTVShows extends AppCompatActivity {
         super.onStop();
         adapter.stopListening();
     }
-
-
-
 
 }

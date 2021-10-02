@@ -48,8 +48,8 @@ public class MyReviewsBooks extends AppCompatActivity {
                 = FirebaseDatabase.getInstance().getReference("MyBookReviews");
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//        String uid = user.getUid();
-        String uid = "id451";
+        String uid = user.getUid();
+//        String uid = "id451";
 
 
         recyclerView = findViewById(R.id.rv_reviews);

@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -36,9 +38,16 @@ public class MyBookAdapter extends FirebaseRecyclerAdapter<
     onBindViewHolder(@NonNull MyBookAdapter.mybookViewholder holder,
                      int position, @NonNull Review model)
     {
+
         //delete
-        DatabaseReference mbase;
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+//        String uid = "WuylE2qPCLXfTw4NnNu1XSOTbJg2";
+
+        DatabaseReference mbase, nbase;
         mbase = FirebaseDatabase.getInstance().getReference("MyBookReviews");
+        nbase = FirebaseDatabase.getInstance().getReference("Book");
 
 
 
@@ -48,7 +57,10 @@ public class MyBookAdapter extends FirebaseRecyclerAdapter<
         holder.delBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 mbase.child(myKey).removeValue();
+                nbase.child(model.getLockey()).child("reviews").child(uid).removeValue();
+
             }
         });
 
