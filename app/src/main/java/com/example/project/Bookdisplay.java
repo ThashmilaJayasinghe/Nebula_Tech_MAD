@@ -43,6 +43,12 @@ public class Bookdisplay extends AppCompatActivity {
     Bookadapter bookadapter;
     String postkey;
 
+    //adding reviews ********************************************************************************
+    Review myreview;
+    String title;
+    String image;
+    //***********************************************************************************************
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -149,6 +155,43 @@ public class Bookdisplay extends AppCompatActivity {
 
         HashMap cmnt = new HashMap();
         cmnt.put("review", Review);
+
+        //adding reviews *****************************************************************************
+
+        DatabaseReference revbase = FirebaseDatabase.getInstance().getReference("MyBookReviews");
+
+        myreview = new Review();
+
+        DatabaseReference movreference = FirebaseDatabase.getInstance().getReference("Book");
+
+        movreference.orderByKey().equalTo(postkey).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                for(DataSnapshot datas: dataSnapshot.getChildren()){
+
+                    title = datas.child("title").getValue(String.class);
+                    image = datas.child("imageUrl").getValue(String.class);
+
+//                    String vehicle_type = datas.child("v_tpe").getValue(String.class);
+//                    book.setTitle(et_bktitle.getText().toString().trim());
+                }
+
+                myreview.setUid(ruid);
+                myreview.setLockey(postkey);
+                myreview.setReview(Review);
+                myreview.setTitle(title);
+                myreview.setImage(image);
+
+                revbase.push().setValue(myreview);
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                throw databaseError.toException();
+            }
+        });
+
+        //adding reviews ******************************************************************************
 
         databaseReference.child(ruid).updateChildren(cmnt).addOnCompleteListener(new OnCompleteListener() {
             @Override

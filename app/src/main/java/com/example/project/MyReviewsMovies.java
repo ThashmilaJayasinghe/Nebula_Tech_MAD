@@ -48,7 +48,7 @@ public class MyReviewsMovies extends AppCompatActivity {
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 //        String uid = user.getUid();
-        String uid = "id451";
+        String uid = "WuylE2qPCLXfTw4NnNu1XSOTbJg2";
 
 
         recyclerView = findViewById(R.id.rv_reviews);

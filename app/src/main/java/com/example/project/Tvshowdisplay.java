@@ -44,6 +44,12 @@ public class Tvshowdisplay extends AppCompatActivity {
     ArrayList<Tvshowreviews> list;
     Tvshowadapter tvshowadapter;
 
+    //adding reviews ********************************************************************************
+    Review myreview;
+    String title;
+    String image;
+    //***********************************************************************************************
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -153,6 +159,40 @@ public class Tvshowdisplay extends AppCompatActivity {
 
             HashMap cmnt = new HashMap();
             cmnt.put("review", Review);
+
+            //adding reviews *****************************************************************************
+
+            DatabaseReference revbase = FirebaseDatabase.getInstance().getReference("MyTVshowReviews");
+
+            myreview = new Review();
+
+            DatabaseReference movreference = FirebaseDatabase.getInstance().getReference("TVShow");
+
+            movreference.orderByKey().equalTo(postkey).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+
+                    for(DataSnapshot datas: dataSnapshot.getChildren()){
+
+                        title = datas.child("title").getValue(String.class);
+                        image = datas.child("imageUrl").getValue(String.class);
+                    }
+
+                    myreview.setUid(ruid);
+                    myreview.setLockey(postkey);
+                    myreview.setReview(Review);
+                    myreview.setTitle(title);
+                    myreview.setImage(image);
+
+                    revbase.push().setValue(myreview);
+                }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    throw databaseError.toException();
+                }
+            });
+
+            //adding reviews ******************************************************************************
 
             databaseReference.child(ruid).updateChildren(cmnt).addOnCompleteListener(new OnCompleteListener() {
                 @Override
