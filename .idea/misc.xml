@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-
         <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_bookdisplay.xml" value="0.25" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_moviedisplay.xml" value="0.1585144927536232" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_profile.xml" value="0.1" />
@@ -12,7 +11,6 @@
         <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_tvshowpoll.xml" value="0.25" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_updatenew.xml" value="0.1585144927536232" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/cardview.xml" value="0.5" />
-
         <entry key="..\:/Users/HP/Nebula_Tech_MAD/app/src/main/res/drawable-hdpi/ic_baseline_arrow_back_24.xml" value="0.1125" />
         <entry key="..\:/Users/HP/Nebula_Tech_MAD/app/src/main/res/drawable/gradient_background.xml" value="0.1" />
         <entry key="..\:/Users/HP/Nebula_Tech_MAD/app/src/main/res/layout/activity_admin_book_review.xml" value="0.1" />
@@ -53,8 +51,9 @@
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_add_book.xml" value="0.190625" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_add_movie.xml" value="0.190625" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_add_tvshow.xml" value="0.190625" />
+        <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_admin_login.xml" value="0.190625" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_bookdisplay.xml" value="0.1" />
-        <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_main.xml" value="0.190625" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_moviedisplay.xml" value="0.1" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_my_reviews.xml" value="0.190625" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_my_reviews_books.xml" value="0.190625" />

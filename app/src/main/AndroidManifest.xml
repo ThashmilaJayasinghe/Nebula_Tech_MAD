@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
-
-    package="com.example.project"
-    xmlns:tools="http://schemas.android.com/tools">
-
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.project">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -15,23 +12,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-
         android:theme="@style/Theme.Project"
         tools:replace="android:appComponentFactory">
-
-
+        <activity
+            android:name=".AdminLogin"
+            android:exported="true" />
         <activity
             android:name=".Admin_TVShow_View_K"
             android:exported="true" />
         <activity
             android:name=".Admin_Movie_View_K"
             android:exported="true" />
-        <activity
-            android:name=".Admin_Book_View_K" />
-
+        <activity android:name=".Admin_Book_View_K" />
         <activity
             android:name=".AdminRegistration"
-
             android:exported="true" />
         <activity
             android:name=".Admin_TVShowReview"
@@ -54,9 +48,7 @@
         <activity
             android:name=".Home"
             android:exported="true" />
-
         <activity
-
             android:name=".Tvshowpoll"
             android:exported="true" />
         <activity
@@ -74,7 +66,6 @@
         <activity
             android:name=".Tvshowdisplay"
             android:exported="true" />
-
         <activity
             android:name=".AdminPage"
             android:exported="true"
@@ -83,19 +74,15 @@
             android:name=".viewtv"
             android:exported="true"
             android:label="Update/ Delete TV Show"
-            android:parentActivityName=".MmanageTV" >
+            android:parentActivityName=".MmanageTV">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MmanageTV" />
-
         </activity>
-
-
         <activity
             android:name=".Registration_form"
-
             android:exported="true" />
         <activity
             android:name=".MmanageTV"
@@ -107,9 +94,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".AdminPage" />
-
         </activity>
-
         <activity
             android:name=".ManageMovies"
             android:exported="true"
@@ -120,9 +105,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".AdminPage" />
-
         </activity>
-
         <activity
             android:name=".ViewMovies"
             android:exported="true"
@@ -133,9 +116,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ManageMovies" />
-
         </activity>
-
         <activity
             android:name=".ViewBooks"
             android:exported="true"
@@ -147,8 +128,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ManageBooks" />
         </activity>
-
-
         <activity
             android:name=".ManageBooks"
             android:exported="true"
@@ -159,10 +138,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".AdminPage" />
-
         </activity>
-
-
         <activity
             android:name=".Profile"
             android:exported="true" />
@@ -176,9 +152,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MmanageTV" />
-
         </activity>
-
         <activity
             android:name=".AddMovie"
             android:exported="true"
@@ -189,9 +163,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ManageMovies" />
-
         </activity>
-
         <activity
             android:name=".MyReviewsTVShows"
             android:exported="true"
@@ -209,7 +181,6 @@
             android:label="My Reviews - Movies"
             android:parentActivityName=".MyReviews">
 
-
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -226,7 +197,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ManageBooks" />
         </activity>
-
         <activity
             android:name=".MostPopular"
             android:exported="true"
@@ -246,10 +216,10 @@
             android:name=".MyReviews"
             android:exported="true"
             android:label="My Reviews" />
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

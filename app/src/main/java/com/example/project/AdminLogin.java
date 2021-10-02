@@ -16,15 +16,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends AppCompatActivity {
+public class AdminLogin extends AppCompatActivity {
 
-    private Button register;
     private EditText et_Username;
     private EditText et_Password;
     private Button signIn;
-    private Button admin;
 
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
@@ -32,35 +29,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_admin_login);
 
-        admin = findViewById(R.id.btn_adminLogin);
-        register = findViewById(R.id.btn_Register);
-        signIn = findViewById(R.id.btn_signin);
-        et_Username = findViewById(R.id.et_Username);
-        et_Password = findViewById(R.id.et_password);
+        signIn = findViewById(R.id.btn_Asignin);
+        et_Username = findViewById(R.id.et_AUsername);
+        et_Password = findViewById(R.id.et_Apassword);
         progressBar = findViewById(R.id.progressBar);
         mAuth = FirebaseAuth.getInstance();
-
     }
-
-    /**Called to access register */
-    public void register(View view) {
-        Intent intent = new Intent(this, Registration_form.class);
-        startActivity(intent);
-
-    }
-
-    /**Called to access admin login */
-    public void adminLoginPage(View view) {
-        Intent intent = new Intent(this, AdminLogin.class);
-        startActivity(intent);
-
-    }
-
 
     /**Called to sign in */
-    public void userLogin(View view) {
+    public void adminLogin(View view) {
         String username = et_Username.getText().toString().trim();
         String password = et_Password.getText().toString().trim();
 
@@ -91,9 +70,9 @@ public class MainActivity extends AppCompatActivity {
 
                 if(task.isSuccessful()) {
                     //redirecting to Home
-                    startActivity(new Intent(MainActivity.this, Home.class));
+                    startActivity(new Intent(AdminLogin.this, AdminPage.class));
                 }else {
-                    Toast.makeText(MainActivity.this, "Failed to login! Please check credentials", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AdminLogin.this, "Failed to login! Please check credentials", Toast.LENGTH_LONG).show();
                 }
             }
         });

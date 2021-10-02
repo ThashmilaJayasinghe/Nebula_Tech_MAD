@@ -56,7 +56,8 @@
     <string name="btnDelete">Remove</string>
 
     <string name="textviewemail">example@example.lk</string>
-
+    <string name="tv_AdminLogin">Admin Login</string>
+    <string name="btn_adminLogin">Admin Login</string>
 
 
 </resources>
