@@ -3,11 +3,14 @@ package com.example.project;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,13 +41,19 @@ public class Registration_form extends AppCompatActivity implements View.OnClick
         registeruser = (Button) findViewById(R.id.button6);
         registeruser.setOnClickListener(this);
 
-        editTextTextPersonName3 = (EditText) findViewById(R.id.UserNameDisplay);
+        editTextTextPersonName3 = (EditText) findViewById(R.id.editTextTextPersonName3);
         editTextTextEmailAddress = (EditText) findViewById(R.id.editTextTextEmailAddress);
         editTextTextPassword = (EditText) findViewById(R.id.editTextTextPassword);
 
 
 
 
+
+    }
+
+    public void registerLogin(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
 
     }
 
@@ -125,6 +134,7 @@ public class Registration_form extends AppCompatActivity implements View.OnClick
 
                                     if (task.isSuccessful()) {
                                         Toast.makeText(Registration_form.this, "user registration succesfull", Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(Registration_form.this, MainActivity.class));
                                     } else {
                                         Toast.makeText(Registration_form.this, "user registration Unsuccesfull", Toast.LENGTH_LONG).show();
                                     }

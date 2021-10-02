@@ -10,7 +10,6 @@
         android:id="@+id/btn_ManageBook"
         android:layout_width="280dp"
         android:layout_height="85dp"
-        android:layout_marginBottom="40dp"
         android:text="@string/btn_ManageBook"
         android:textSize="16sp"
         app:backgroundTint="#540022"
@@ -23,21 +22,33 @@
         android:id="@+id/btn_ManageMovies"
         android:layout_width="280dp"
         android:layout_height="85dp"
-        android:layout_marginBottom="36dp"
         android:text="@string/btn_ManageMovies"
         android:textSize="16sp"
         app:backgroundTint="#540022"
         app:layout_constraintBottom_toTopOf="@+id/btn_ManageTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.419"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Manage Movies" />
 
     <Button
         android:id="@+id/btn_ManageTV"
         android:layout_width="280dp"
         android:layout_height="85dp"
-        android:layout_marginBottom="100dp"
         android:text="@string/btn_ManageTV"
+        android:textSize="16sp"
+        app:backgroundTint="#540022"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ManageReviews"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.419"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_ManageReviews"
+        android:layout_width="280dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="42dp"
+        android:text="Manage Reviews"
         android:textSize="16sp"
         app:backgroundTint="#540022"
         app:layout_constraintBottom_toBottomOf="parent"

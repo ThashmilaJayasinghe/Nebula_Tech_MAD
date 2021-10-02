@@ -24,7 +24,7 @@ public class Admin_TVShow_View_K extends AppCompatActivity {
     NavigationView navigationView;
 
     RecyclerView recyclerView;
-    tvshowAdapter_K tvshowAdapter;
+    Admin_tvshowAdapter_K tvshowAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +47,7 @@ public class Admin_TVShow_View_K extends AppCompatActivity {
                         .setQuery(readRef, TvshowModel_K.class)
                         .build();
 
-        tvshowAdapter = new tvshowAdapter_K(options);
+        tvshowAdapter = new Admin_tvshowAdapter_K(options);
         recyclerView.setAdapter(tvshowAdapter);
 
         GridLayoutManager gridLayoutManager= new GridLayoutManager(this,2);
@@ -99,7 +99,7 @@ public class Admin_TVShow_View_K extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("TVShow").orderByChild("title").startAt(s).endAt(s+"\uf8ff"), TvshowModel_K.class)
                         .build();
 
-        tvshowAdapter = new tvshowAdapter_K(options);
+        tvshowAdapter = new Admin_tvshowAdapter_K(options);
         tvshowAdapter.startListening();
         recyclerView.setAdapter(tvshowAdapter);
 

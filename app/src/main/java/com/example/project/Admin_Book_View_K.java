@@ -29,7 +29,7 @@ public class Admin_Book_View_K extends AppCompatActivity {
     Toolbar toolbar;
 
     RecyclerView recyclerView;
-    bookAdaptar_K bookAdapter;
+    Admin_bookAdaptar_K bookAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,7 +103,7 @@ public class Admin_Book_View_K extends AppCompatActivity {
                         .setQuery(readRef, BookModel_K.class)
                         .build();
 
-        bookAdapter = new bookAdaptar_K(options);
+        bookAdapter = new Admin_bookAdaptar_K(options);
         recyclerView.setAdapter(bookAdapter);
 
         GridLayoutManager gridLayoutManager= new GridLayoutManager(this,2);
@@ -155,7 +155,7 @@ public class Admin_Book_View_K extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Book").orderByChild("title").startAt(s).endAt(s+"\uf8ff"), BookModel_K.class)
                         .build();
 
-        bookAdapter = new bookAdaptar_K(options);
+        bookAdapter = new Admin_bookAdaptar_K(options);
         bookAdapter.startListening();
         recyclerView.setAdapter(bookAdapter);
 

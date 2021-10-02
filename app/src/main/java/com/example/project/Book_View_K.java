@@ -10,10 +10,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -27,6 +30,7 @@ public class Book_View_K extends AppCompatActivity {
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
     Toolbar toolbar;
+    Button Update;
 
     RecyclerView recyclerView;
     bookAdaptar_K bookAdapter;
@@ -35,6 +39,7 @@ public class Book_View_K extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_view_k);
 
+        Update = findViewById(R.id.btn_myreviews);
         drawerLayout = (DrawerLayout) findViewById(R.id.drower);
         navigationView = (NavigationView) findViewById(R.id.nav);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -42,6 +47,16 @@ public class Book_View_K extends AppCompatActivity {
         toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.nav_open,R.string.nav_open);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
+        Update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Book_View_K.this,MyReviewsBooks.class );
+                startActivity(intent);
+
+            }
+        });
+
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override

@@ -7,22 +7,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Home extends AppCompatActivity {
+public class Admin_Home extends AppCompatActivity {
 
     private Button btn_books;
     private Button btn_movies;
     private Button btn_tvshows;
-    private Button btn_myprofile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-
+        setContentView(R.layout.activity_admin_home);
         btn_books = (Button)findViewById(R.id.btn_books);
         btn_movies = (Button)findViewById(R.id.btn_movies);
         btn_tvshows = (Button)findViewById(R.id.btn_tvshows);
-        btn_myprofile = findViewById(R.id.btn_myprofile);
+
 
         btn_books.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,33 +41,19 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        btn_myprofile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openInsideActivity5();
-            }
-        });
-
     }
-
     public void openInsideActivity2(){
-        Intent intent = new Intent(this,Book_View_K.class);
+        Intent intent = new Intent(this,Admin_Book_View_K.class);
         startActivity(intent);
     }
     public void openInsideActivity3(){
-        Intent intent = new Intent(this,Movie_View_K.class);
+        Intent intent = new Intent(this,Admin_Movie_View_K.class);
         startActivity(intent);
     }
     public void openInsideActivity4(){
-        Intent intent = new Intent(this,TVShow_View_K.class);
-        startActivity(intent);
-    }
-    public void openInsideActivity5(){
-        Intent intent = new Intent(this,profileview.class);
+        Intent intent = new Intent(this,Admin_TVShow_View_K.class);
         startActivity(intent);
     }
 
 }
-
-
 

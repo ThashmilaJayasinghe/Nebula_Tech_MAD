@@ -9,9 +9,12 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.navigation.NavigationView;
@@ -22,6 +25,7 @@ public class TVShow_View_K extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+    Button myreview;
 
     RecyclerView recyclerView;
     tvshowAdapter_K tvshowAdapter;
@@ -40,6 +44,7 @@ public class TVShow_View_K extends AppCompatActivity {
 
         recyclerView = (RecyclerView)findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        myreview = findViewById(R.id.btn_myreviews);
 
         DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("TVShow");
         FirebaseRecyclerOptions<TvshowModel_K> options =
@@ -52,6 +57,15 @@ public class TVShow_View_K extends AppCompatActivity {
 
         GridLayoutManager gridLayoutManager= new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(gridLayoutManager);
+
+        myreview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TVShow_View_K.this,MyReviewsTVShows.class );
+                startActivity(intent);
+
+            }
+        });
 
     }
     @Override

@@ -21,7 +21,7 @@ public class Admin_Movie_View_K extends AppCompatActivity {
     NavigationView navigationView;
 
     RecyclerView recyclerView;
-    movieAdapter_K movieAdapter;
+    Admin_movieAdapter_K movieAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class Admin_Movie_View_K extends AppCompatActivity {
                         .setQuery(readRef, MovieModel_K.class)
                         .build();
 
-        movieAdapter = new movieAdapter_K(options);
+        movieAdapter = new Admin_movieAdapter_K(options);
         recyclerView.setAdapter(movieAdapter);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);

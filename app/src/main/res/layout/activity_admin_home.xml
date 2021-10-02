@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context=".Home">
+    tools:context=".Admin_Home">
 
     <ImageView
         android:id="@+id/imageView"
@@ -29,9 +29,9 @@
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="384dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#540022"
-        android:text="books"
+        android:text="@string/btn_Books"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_movies"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,10 +43,10 @@
         android:id="@+id/btn_movies"
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#540022"
-        android:text="movies"
+        android:text="@string/btn_Movies"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_tvshows"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,30 +58,15 @@
         android:id="@+id/btn_tvshows"
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="#540022"
-        android:text="tv shows"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_myprofile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_movies" />
-
-    <Button
-        android:id="@+id/btn_myprofile"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="100dp"
         android:backgroundTint="#540022"
-        android:text="My profile"
+        android:text="@string/btn_Tvshows"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_tvshows" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_movies" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

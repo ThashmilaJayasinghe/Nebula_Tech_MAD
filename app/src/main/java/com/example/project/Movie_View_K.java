@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.navigation.NavigationView;
@@ -19,6 +22,7 @@ public class Movie_View_K extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+    Button myreviews;
 
     RecyclerView recyclerView;
     movieAdapter_K movieAdapter;
@@ -38,6 +42,7 @@ public class Movie_View_K extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        myreviews = findViewById(R.id.btn_myreviews);
 
         DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Movie");
         FirebaseRecyclerOptions<MovieModel_K> options =
@@ -50,6 +55,15 @@ public class Movie_View_K extends AppCompatActivity {
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(gridLayoutManager);
+
+        myreviews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Movie_View_K.this,MyReviewsMovies.class );
+                startActivity(intent);
+
+            }
+        });
 
     }
 
