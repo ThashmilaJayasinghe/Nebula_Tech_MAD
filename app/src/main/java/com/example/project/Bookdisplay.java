@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,6 +41,7 @@ public class Bookdisplay extends AppCompatActivity {
     DatabaseReference databaseReference,databaseReferenceR,databaseReferenceD,databaseReferenceI;
     ArrayList<Bookreviews> list;
     Bookadapter bookadapter;
+    String postkey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,16 +51,18 @@ public class Bookdisplay extends AppCompatActivity {
         confirm = findViewById(R.id.reviewconfirmbook);
         Rreview = findViewById(R.id.Rbook);
         description= findViewById(R.id.moviedescription);
-        description.setEnabled(false);
+//        description.setEnabled(false);
 
+        Intent intent = getIntent();
+        postkey=getIntent().getStringExtra("postkey");
 
         //database instance and reference
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReferenceR = firebaseDatabase.getReference("Book").child("-MkIhcvghnveftcABZMp");
+        databaseReferenceR = firebaseDatabase.getReference("Book").child(postkey);
         //for description
-        databaseReferenceD= firebaseDatabase.getReference("Book").child("-MkIhcvghnveftcABZMp");
+        databaseReferenceD= firebaseDatabase.getReference("Book").child(postkey);
         //for image
-        databaseReferenceI= firebaseDatabase.getReference("Book").child("-MkIhcvghnveftcABZMp");
+        databaseReferenceI= firebaseDatabase.getReference("Book").child(postkey);
         //recyclerview
         Rreview.setHasFixedSize(true);
         Rreview.setLayoutManager(new LinearLayoutManager(this));
@@ -64,7 +70,7 @@ public class Bookdisplay extends AppCompatActivity {
         bookadapter = new Bookadapter(this, list);
         Rreview.setAdapter(bookadapter);
 
-        databaseReference = firebaseDatabase.getReference("Book").child("-MkIhcvghnveftcABZMp").child("reviews");
+        databaseReference = firebaseDatabase.getReference("Book").child(postkey).child("reviews");
 
         //retreive data to recyclerview
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -89,8 +95,8 @@ public class Bookdisplay extends AppCompatActivity {
         databaseReferenceI.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String url = snapshot.child("imageUrl").getValue().toString();
-                Picasso.get().load(url).into(img);
+//                String url = snapshot.child("imageUrl").getValue().toString();
+//                Picasso.get().load(url).into(img);
             }
 
             @Override
@@ -137,10 +143,14 @@ public class Bookdisplay extends AppCompatActivity {
 
         String randomkey = id+""+new Random().nextInt(1000);
 
+        FirebaseUser ruser = FirebaseAuth.getInstance().getCurrentUser();
+        String ruid = ruser.getUid();
+
+
         HashMap cmnt = new HashMap();
         cmnt.put("review", Review);
 
-        databaseReference.child(randomkey).updateChildren(cmnt).addOnCompleteListener(new OnCompleteListener() {
+        databaseReference.child(ruid).updateChildren(cmnt).addOnCompleteListener(new OnCompleteListener() {
             @Override
             public void onComplete(@NonNull Task task) {
                 if (task.isSuccessful())

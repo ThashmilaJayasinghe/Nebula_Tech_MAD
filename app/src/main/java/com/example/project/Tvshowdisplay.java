@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -36,6 +39,8 @@ public class Tvshowdisplay extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase,firebaseDatabase2;
     DatabaseReference databaseReference, databaseReferenceR,databaseReferenceI,databaseReferenceD;
 
+    String postkey;
+
     ArrayList<Tvshowreviews> list;
     Tvshowadapter tvshowadapter;
 
@@ -46,6 +51,8 @@ public class Tvshowdisplay extends AppCompatActivity {
         setContentView(R.layout.activity_tvshowdisplay);
 
 
+        Intent intent = getIntent();
+        postkey=getIntent().getStringExtra("postkey");
 
 
             //initialize id from resource
@@ -57,11 +64,11 @@ public class Tvshowdisplay extends AppCompatActivity {
 
             //database instance and reference
             firebaseDatabase = FirebaseDatabase.getInstance();
-            databaseReferenceR = firebaseDatabase.getReference("TVShow").child("-MkMiBSz-svCP2tp2rx2");
+            databaseReferenceR = firebaseDatabase.getReference("TVShow").child(postkey);
             //for image
-            databaseReferenceI= firebaseDatabase.getReference("TVShow").child("-MkMiBSz-svCP2tp2rx2");
+            databaseReferenceI= firebaseDatabase.getReference("TVShow").child(postkey);
             //des
-            databaseReferenceD= firebaseDatabase.getReference("Book").child("-MkMiBSz-svCP2tp2rx2");
+            databaseReferenceD= firebaseDatabase.getReference("Book").child(postkey);
             //recyclerview
             Rreview.setHasFixedSize(true);
             Rreview.setLayoutManager(new LinearLayoutManager(this));
@@ -69,7 +76,7 @@ public class Tvshowdisplay extends AppCompatActivity {
             tvshowadapter = new Tvshowadapter(this, list);
             Rreview.setAdapter(tvshowadapter);
 
-            databaseReference = firebaseDatabase.getReference("TVShow").child("-MkMiBSz-svCP2tp2rx2").child("reviews");
+            databaseReference = firebaseDatabase.getReference("TVShow").child(postkey).child("reviews");
 
             //retreive data to recyclerview
             databaseReference.addValueEventListener(new ValueEventListener() {
@@ -107,8 +114,8 @@ public class Tvshowdisplay extends AppCompatActivity {
         databaseReferenceD.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String Description = snapshot.child("description").getValue().toString();
-                description.setText(Description);
+//                String Description = snapshot.child("description").getValue().toString();
+//                description.setText(Description);
             }
 
             @Override
@@ -141,10 +148,13 @@ public class Tvshowdisplay extends AppCompatActivity {
 
             String randomkey = id+""+new Random().nextInt(1000);
 
+            FirebaseUser ruser = FirebaseAuth.getInstance().getCurrentUser();
+            String ruid = ruser.getUid();
+
             HashMap cmnt = new HashMap();
             cmnt.put("review", Review);
 
-            databaseReference.child(randomkey).updateChildren(cmnt).addOnCompleteListener(new OnCompleteListener() {
+            databaseReference.child(ruid).updateChildren(cmnt).addOnCompleteListener(new OnCompleteListener() {
                 @Override
                 public void onComplete(@NonNull Task task) {
                     if (task.isSuccessful())

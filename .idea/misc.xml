@@ -9,12 +9,8 @@
         <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_profileview.xml" value="0.2345679012345679" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_tvshowdisplay.xml" value="0.2753623188405797" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_tvshowpoll.xml" value="0.25" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_updatenew.xml" value="0.22" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/activity_updatenew.xml" value="0.1585144927536232" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/cardview.xml" value="0.5" />
-
-        <entry key="..\:/Users/HP/AndroidStudioProjects/Nebula_Tech_MAD/app/src/main/res/layout/toolbar.xml" value="0.14764492753623187" />
-
-
         <entry key="..\:/Users/HP/Nebula_Tech_MAD/app/src/main/res/drawable-hdpi/ic_baseline_arrow_back_24.xml" value="0.1125" />
         <entry key="..\:/Users/HP/Nebula_Tech_MAD/app/src/main/res/drawable/gradient_background.xml" value="0.1" />
         <entry key="..\:/Users/HP/Nebula_Tech_MAD/app/src/main/res/layout/activity_admin_book_review.xml" value="0.1" />
@@ -50,20 +46,24 @@
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_add_book.xml" value="0.190625" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_add_movie.xml" value="0.190625" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_add_tvshow.xml" value="0.190625" />
+        <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_bookdisplay.xml" value="0.1" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_moviedisplay.xml" value="0.1" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_my_reviews.xml" value="0.190625" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_my_reviews_books.xml" value="0.190625" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_my_reviews_movies.xml" value="0.10625470987189148" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_my_reviews_tvshows.xml" value="0.6691785983421251" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_profile.xml" value="0.1" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_prrofile.xml" value="0.190625" />
-        <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_view_books.xml" value="0.1" />
+        <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_tvshowdisplay.xml" value="0.102734375" />
+        <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/activity_view_books.xml" value="0.190625" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/bookr.xml" value="0.1" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/mybookreview.xml" value="0.17890625" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/mymoviereview.xml" value="0.190625" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/mytvreview.xml" value="0.168359375" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/review.xml" value="0.187890625" />
         <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/layout/toolbar.xml" value="0.190625" />
+        <entry key="..\:/Users/THASHMILA/AndroidStudioProjects/Project/app/src/main/res/menu/main_menu.xml" value="0.190625" />
       </map>
     </option>
   </component>

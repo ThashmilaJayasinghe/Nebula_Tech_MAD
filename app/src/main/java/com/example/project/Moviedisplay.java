@@ -37,7 +37,8 @@ public class Moviedisplay extends AppCompatActivity {
     private ImageView img;
 
     FirebaseDatabase firebaseDatabase,firebaseDatabase2;
-    DatabaseReference databaseReference, databaseReferenceR,databaseReferenceI,databaseReferenceD;
+    DatabaseReference databaseReference, databaseReferenceR,databaseReferenceI,databaseReferenceD, dbreference;
+
 
 
     ArrayList<Moviereviews> list;
@@ -45,8 +46,8 @@ public class Moviedisplay extends AppCompatActivity {
     movieadapter Movieadapter;
 
     //adding reviews **********************************************************************************
-//    String postkey;
-//    Review myreview;
+    String postkey;
+    Review myreview;
     //***********************************************************************************************
 
 
@@ -58,23 +59,28 @@ public class Moviedisplay extends AppCompatActivity {
         confirm = findViewById(R.id.reviewconfirm);
         Rreview = findViewById(R.id.commentview);
         img= findViewById(R.id.movieimage);
+        description= findViewById(R.id.moviedescription);
 
 
         //adding review *****************************************************************************
 
         //Change values here!
-//        Intent intent = getIntent();
-//        postkey=getIntent().getStringExtra("postkey");
+        Intent intent = getIntent();
+        postkey=getIntent().getStringExtra("postkey");
         //postkey = "-MkMJRFCQcGrXrzo7fgM";
+
+
+
+
 
         //adding review *****************************************************************************
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReferenceR= firebaseDatabase.getReference("Movie").child("-MkMJRFCQcGrXrzo7fgM");
+        databaseReferenceR= firebaseDatabase.getReference("Movie").child(postkey);
         //des
-        databaseReferenceD= firebaseDatabase.getReference("Movie").child("-MkMJRFCQcGrXrzo7fgM");
+        databaseReferenceD= firebaseDatabase.getReference("Movie").child(postkey);
         //image
-        databaseReferenceI= firebaseDatabase.getReference("Movie").child("-MkMJRFCQcGrXrzo7fgM");
+        databaseReferenceI= firebaseDatabase.getReference("Movie").child(postkey);
         //recyclerview
         Rreview.setHasFixedSize(true);
         Rreview.setLayoutManager(new LinearLayoutManager(this));
@@ -83,12 +89,13 @@ public class Moviedisplay extends AppCompatActivity {
         Rreview.setAdapter(Movieadapter);
 
         //create instance
-        databaseReference = firebaseDatabase.getReference("Movie").child("-MkMJRFCQcGrXrzo7fgM").child("reviews");
+        databaseReference = firebaseDatabase.getReference("Movie").child(postkey).child("reviews");
 
         //retrieve
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list.clear();
                 for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren())
                 {
                     Moviereviews user = dataSnapshot1.getValue(Moviereviews.class);
@@ -154,21 +161,29 @@ public class Moviedisplay extends AppCompatActivity {
 
         String randomkey = id+""+new Random().nextInt(1000);
 
+        //********************************************************************************
+        FirebaseUser ruser = FirebaseAuth.getInstance().getCurrentUser();
+        String ruid = ruser.getUid();
+        //String ruid = "id500";
+
+
+
         HashMap cmnt = new HashMap();
         cmnt.put("review", Review);
 
         //adding reviews *****************************************************************************
 
-//        DatabaseReference revbase = FirebaseDatabase.getInstance().getReference("MyMovieReviews");
-//        FirebaseUser ruser = FirebaseAuth.getInstance().getCurrentUser();
-////        String ruid = ruser.getUid();
-//        String ruid = "id500";
-//
-//        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Movie");
+        DatabaseReference revbase = FirebaseDatabase.getInstance().getReference("MyMovieReviews");
+
+
+//        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Movie").child(postkey);
 //
 //        reference.orderByKey().equalTo(postkey).addValueEventListener(new ValueEventListener() {
 //            @Override
 //            public void onDataChange(DataSnapshot dataSnapshot) {
+//
+//
+//
 //                for(DataSnapshot datas: dataSnapshot.getChildren()){
 //                    myreview.setTitle(datas.child("title").getValue(String.class));
 //                    myreview.setImage(datas.child("image").getValue(String.class));
@@ -186,15 +201,62 @@ public class Moviedisplay extends AppCompatActivity {
 //            }
 //        });
 
+
+//        dbreference = firebaseDatabase.getReference("Movie").child(postkey);
+//
+//        dbreference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//
+//
+//                String title = snapshot.child("title").getValue(String.class);
+//                String image = snapshot.child("image").getValue().toString();
+//                String review = snapshot.child("reviews").child(ruid).getValue().toString();
+//
+//                addDatatoFirebase(title, image, postkey, ruid, review);
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//
+//            private void addDatatoFirebase ( String title, String image, String postkey, String review, String ruid) {
+//
+//
+//                HashMap cmnt = new HashMap();
+//                cmnt.put("title", title);
+//                cmnt.put("image", image);
+//                cmnt.put("lockey", postkey);
+//                cmnt.put("review", review);
+//                cmnt.put("uid", ruid);
+
+                revbase.push().setValue(cmnt);
+//                    @Override
+//                    public void onComplete(@NonNull Task task) {
+//                        if (task.isSuccessful())
+//
+////                            Toast.makeText(Bookdisplay.this, "data added", Toast.LENGTH_SHORT).show();
+//                        else
+////                            Toast.makeText(Bookdisplay.this, "data  not added", Toast.LENGTH_SHORT).show();
+//                    }
+
+
+
+
+
+
+
         //adding reviews ******************************************************************************
 
-        databaseReference.child(randomkey).updateChildren(cmnt).addOnCompleteListener(new OnCompleteListener() {
+        databaseReference.child(ruid).updateChildren(cmnt).addOnCompleteListener(new OnCompleteListener() {
             @Override
             public void onComplete(@NonNull Task task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(Moviedisplay.this, "data added", Toast.LENGTH_SHORT).show();
                     //******************************************************************
-//                    revbase.push().setValue(myreview);
+                    revbase.push().setValue(myreview);
                 }
                 else
                     Toast.makeText(Moviedisplay.this, "data  not added", Toast.LENGTH_SHORT).show();

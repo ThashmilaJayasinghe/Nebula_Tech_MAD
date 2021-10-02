@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -45,16 +46,16 @@ public class profileview extends AppCompatActivity {
         Display = findViewById(R.id.DUsername);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        //user= FirebaseAuth.getInstance().getCurrentUser();
-        //uid= user.getUid();
+        user= FirebaseAuth.getInstance().getCurrentUser();
+        uid= user.getUid();
         databaseReference= firebaseDatabase.getReference("Users");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String Username = snapshot.child("5pGDTkgh4uZLyx6ILT72v9avCTa2").child("name").getValue(String.class);
-                String Email = snapshot.child("5pGDTkgh4uZLyx6ILT72v9avCTa2").child("email").getValue().toString();
-                String Password = snapshot.child("5pGDTkgh4uZLyx6ILT72v9avCTa2").child("password").getValue().toString();
+                String Username = snapshot.child(uid).child("name").getValue(String.class);
+                String Email = snapshot.child(uid).child("email").getValue().toString();
+                String Password = snapshot.child(uid).child("password").getValue().toString();
 
                 email.setText(Email);
                 name.setText(Username);
