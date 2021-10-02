@@ -21,7 +21,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Book_View_K extends AppCompatActivity {
+public class Admin_Book_View_K extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -33,7 +33,7 @@ public class Book_View_K extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_book_view_k);
+        setContentView(R.layout.activity_admin_book_view_k);
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drower);
         navigationView = (NavigationView) findViewById(R.id.nav);
@@ -162,4 +162,3 @@ public class Book_View_K extends AppCompatActivity {
     }
 
 }
-

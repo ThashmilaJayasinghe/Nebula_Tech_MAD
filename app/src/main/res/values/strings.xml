@@ -44,5 +44,6 @@
     <string name="btn_ManageMovies">"Manage Movies "</string>
     <string name="btn_ManageTV">Manage TV Shows</string>
     <string name="imageView3">Image</string>
+    <string name="btnDelete">Remove</string>
 
 </resources>
