@@ -46,7 +46,7 @@ public class reviewAdapter_K extends FirebaseRecyclerAdapter<ReviewModel_K,revie
                 builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        FirebaseDatabase.getInstance().getReference().child("Review")
+                        FirebaseDatabase.getInstance().getReference().child("Book").child("-MkIhcvghnveftcABZMp").child("reviews")
                                 .child(getRef(position).getKey()).removeValue();
                     }
                 });

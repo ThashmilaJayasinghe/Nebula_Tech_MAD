@@ -14,7 +14,7 @@ public class Admin_TVShowReview extends AppCompatActivity {
 
     String postkey;
     RecyclerView recyclerView;
-    reviewAdapter_K reviewAdapter;
+    reviewAdapter_TVshow_K reviewAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +31,7 @@ public class Admin_TVShowReview extends AppCompatActivity {
                         .setQuery(readRef, ReviewModel_K.class)
                         .build();
 
-        reviewAdapter = new reviewAdapter_K(options);
+        reviewAdapter = new reviewAdapter_TVshow_K(options);
         recyclerView.setAdapter(reviewAdapter);
     }
     @Override

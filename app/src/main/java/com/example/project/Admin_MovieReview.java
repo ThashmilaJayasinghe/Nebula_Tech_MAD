@@ -14,7 +14,7 @@ public class Admin_MovieReview extends AppCompatActivity {
 
     String postkey;
     RecyclerView recyclerView;
-    reviewAdapter_K reviewAdapter;
+    reviewAdapter_Movie_K reviewAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +32,7 @@ public class Admin_MovieReview extends AppCompatActivity {
                         .setQuery(readRef, ReviewModel_K.class)
                         .build();
 
-        reviewAdapter = new reviewAdapter_K(options);
+        reviewAdapter = new reviewAdapter_Movie_K(options);
         recyclerView.setAdapter(reviewAdapter);
 
 
